@@ -6,6 +6,10 @@ All APIs are built as a restful API which expect to receive data in JSON format 
 
 You can use tools as Insomnia (https://insomnia.rest/) or Postman(https://www.getpostman.com/) in order to test the API. Per API you can find a "Curl" text which can easily use to copy/paste in your test tool without  entering all the information yourself manually.
 
+![insomnia_newRequest](./images/insomnia_newRequest.png)
+
+![insomnia_pasteCurl](./images/insomnia_pasteCurl.png)
+
 ## How to get access?
 
 The API itself is public accessible for everyone, but to make sure the data is processed for the correct customer, the "requester" needs to identify himself by means of an API key, and User ID. These keys will be provided by the onlinewerkrooster.be team.  If you haven't received these keys yet, please contact support@onlinewerkrooster.be to receive this information so you can start using the API.
