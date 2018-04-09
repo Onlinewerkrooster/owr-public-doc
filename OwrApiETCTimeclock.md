@@ -39,7 +39,7 @@ https://www.onlinewerkrooster.be/APIOWR/api/Clock/ETCClock
 | Field name | Type                 | Required      | Value                                | Remarks                                                      |
 | ---------- | -------------------- | ------------- | ------------------------------------ | ------------------------------------------------------------ |
 | NationalId | String               | Yes           | 87.08.20-209.07                      | National Registration Number of the employee to register time clock data. <br /><br />(dashes(-), points(.) or whitespaces are filtered out) |
-| UserKey    | String (Guid)        | Yes           | 1982D3B5-4059-4D75-8BF7-E8A4296B98C7 | Unique ID to identify the the user who's using the API. (provided by the onlinewerkooster.be team) |
+| UserKey    | String (Guid)        | Yes           | 1982D3B5-4059-4D75-8BF7-E8A4296B98C7 | Unique ID to identify the the user who's using the API. (provided by the onlinewerkrooster.be team) |
 | CheckIn    | Timestamp (ISO 8601) | Conditionally | 2018-03-15T13:46:50.52               | Date/Time to register the start of the working day           |
 | CheckOut   | Timestamp (ISO 8601) | Conditionally | 2018-03-15T14:46:50.52               | Date/Time to register the end of the working day             |
 

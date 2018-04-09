@@ -36,7 +36,7 @@ https://www.onlinewerkrooster.be/APIOWR/api/Clock/ClockTimeSpecified
 
 | Field name | Type                 | Required | Value                                | Remarks                                                      |
 | ---------- | -------------------- | -------- | ------------------------------------ | ------------------------------------------------------------ |
-| UserId     | String (Guid)        | Yes      | 1982D3B5-4059-4D75-8BF7-E8A4296B98C7 | Unique ID to identify the the user who's using the API. (provided by the onlinewerkooster.be team) |
+| UserId     | String (Guid)        | Yes      | 1982D3B5-4059-4D75-8BF7-E8A4296B98C7 | Unique ID to identify the the user who's using the API. (provided by the onlinewerkrooster.be team) |
 | INSS       | String               | Yes      | 87.08.20-209.07                      | National Registration Number of the employee to register time clock data. <br /><br />(dashes(-), points(.) or whitespaces are filtered out) |
 | ApiKey     | String               | Yes      | 3fdae2c8b32348a3855af9f0377191d4     | Unique ID to identify the requester                          |
 | Timestamp  | Timestamp (ISO 8601) | Yes      | 2018-03-15T13:46:50.52F              | Date/time to register                                        |

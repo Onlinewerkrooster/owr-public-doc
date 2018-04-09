@@ -22,7 +22,7 @@ The API itself is public accessible for everyone, but to make sure the data is p
   - [ClockTimeSpecified](OwrApiClockTimeSpecified.md)
 
 - Revenue
-  - [BCMaticRevenue](OwrBCMaticRevenue.md)
+  - [BCMaticRevenue](OwrApiBCMaticRevenue.md)
 
     ​
 
