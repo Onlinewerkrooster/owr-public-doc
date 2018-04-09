@@ -8,7 +8,7 @@ https://www.onlinewerkrooster.be/APIOWR/api/Revenue/BCMaticRevenue
 
 ### Use cases
 
-- ​Push revenue data from BCMatic
+- Push revenue data from BCMatic
 
 ### Example Request
 
@@ -58,7 +58,7 @@ Response code "200 - OK".
 
 ### Example Response (Error)
 
-It may happen something goes wrong while registering the time clock data due to various reasons, in the list below you can a list of errors.
+It may happen something goes wrong while registering the revenue data due to various reasons, in the list below you can a list of errors.
 
 In general, when you're sure you specified the correct values, you can always contact the onlinewerkrooster.be support (support@onlinewerkrooster.be)
 
