@@ -17,13 +17,12 @@ The API itself is public accessible for everyone, but to make sure the data is p
 ## API List
 
 - Time Clock
-  - [ETC Timeclock API]: OwrApiETCTimeclock.md
-
-  - [ClockTime]: OwrApiClockTime.md
-
-  - [ClockTimeSpecified]: OwrApiClockTimeSpecified
+  - [ETC Timeclock API](OwrApiETCTimeclock.md)
+  - [ClockTime](OwrApiClockTime.md)
+  - [ClockTimeSpecified](OwrApiClockTimeSpecified)
 
 - Revenue
-  - [BCMaticRevenue]: OwrBCMaticRevenue.md
+  - [BCMaticRevenue](OwrBCMaticRevenue.md)
 
     ​
+
