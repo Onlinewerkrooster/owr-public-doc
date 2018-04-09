@@ -14,6 +14,15 @@ You can use tools as Insomnia (https://insomnia.rest/) or Postman(https://www.ge
 
 The API itself is public accessible for everyone, but to make sure the data is processed for the correct customer, the "requester" needs to identify himself by means of an API key, and User ID. These keys will be provided by the onlinewerkrooster.be team.  If you haven't received these keys yet, please contact support@onlinewerkrooster.be to receive this information so you can start using the API.
 
+## API List
+
+- Time Clock
+  - ETC Timeclock API
+  - ClockTime
+  - ClockTimeSpecified
+-  Revenue
+  - BCMaticRevenue
+
 ## ETC Timeclock API
 
 ETC Timeclock API is intended to push time clock data from an external system (ETC) to the Onlinewerkrooster.be application. 
