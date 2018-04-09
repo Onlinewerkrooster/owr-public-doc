@@ -8,7 +8,7 @@ https://www.onlinewerkrooster.be/APIOWR/api/Revenue/BCMaticRevenue
 
 ### Use cases
 
-- ​
+- ​Push revenue data from BCMatic
 
 ### Example Request
 
