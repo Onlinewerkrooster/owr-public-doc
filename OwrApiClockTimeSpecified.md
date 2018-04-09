@@ -1,12 +1,12 @@
-## ClockTime API
+## ClockTimeSpecified API
 
-ClockTime API is intended to push time clock data from to the Onlinewerkrooster.be application. 
+ClockTimeSpecified API is intended to push time clock data from to the Onlinewerkrooster.be application. 
 
-The current date/time is used to register the time clock data, regardless of the timestamp specified in the request.
+The API works the same as the [ClockTime API](OwrApiClockTime.md) with the difference that this API uses the timestamp of the request message and NOT the current date/time.
 
 ### Endpoint
 
-https://www.onlinewerkrooster.be/APIOWR/api/Clock/ClockTime
+https://www.onlinewerkrooster.be/APIOWR/api/Clock/ClockTimeSpecified
 
 ### Use cases
 
@@ -39,13 +39,13 @@ https://www.onlinewerkrooster.be/APIOWR/api/Clock/ClockTime
 | UserId     | String (Guid)        | Yes      | 1982D3B5-4059-4D75-8BF7-E8A4296B98C7 | Unique ID to identify the the user who's using the API. (provided by the onlinewerkooster.be team) |
 | INSS       | String               | Yes      | 87.08.20-209.07                      | National Registration Number of the employee to register time clock data. <br /><br />(dashes(-), points(.) or whitespaces are filtered out) |
 | ApiKey     | String               | Yes      | 3fdae2c8b32348a3855af9f0377191d4     | Unique ID to identify the requester                          |
-| Timestamp  | Timestamp (ISO 8601) | Yes      | 2018-03-15T13:46:50.52F              | Field currently not used.                                    |
+| Timestamp  | Timestamp (ISO 8601) | Yes      | 2018-03-15T13:46:50.52F              | Date/time to register                                        |
 | Type       | String               | Required | ClockIn                              | Depending on the action needed, one of the values below should be used:<br />- ClockIn<br />- ClockOut<br />- BreakIn<br />- BreakOut |
 
 #### CURL
 
 curl --request POST \
-  --url https://www.onlinewerkrooster.be/APIOWR/api/Clock/ClockTime \
+  --url https://www.onlinewerkrooster.be/APIOWR/api/Clock/ClockTimeSpecified \
   --header 'apikey: 3fdae2c8b32348a3855af9f0377191d4' \
   --header 'content-type: application/json' \
   --data '{
