@@ -19,7 +19,7 @@ The API itself is public accessible for everyone, but to make sure the data is p
 - Time Clock
   - [ETC Timeclock API](OwrApiETCTimeclock.md)
   - [ClockTime](OwrApiClockTime.md)
-  - [ClockTimeSpecified](OwrApiClockTimeSpecified)
+  - [ClockTimeSpecified](OwrApiClockTimeSpecified.md)
 
 - Revenue
   - [BCMaticRevenue](OwrBCMaticRevenue.md)
