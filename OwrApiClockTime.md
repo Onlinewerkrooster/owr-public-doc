@@ -26,6 +26,7 @@ https://www.onlinewerkrooster.be/APIOWR/api/Clock/ClockTime
 
 #### Body
 
+```
 {
   "UserId": "2982D3B5-4059-4D75-8BF7-E8A4296B98A7",
   "INSS": "870820-20907",
@@ -33,6 +34,7 @@ https://www.onlinewerkrooster.be/APIOWR/api/Clock/ClockTime
  "Timestamp": "2018-04-09T10:30",
   "Type": "ClockIn"
 }
+```
 
 | Field name | Type                 | Required | Value                                | Remarks                                                      |
 | ---------- | -------------------- | -------- | ------------------------------------ | ------------------------------------------------------------ |
@@ -43,7 +45,7 @@ https://www.onlinewerkrooster.be/APIOWR/api/Clock/ClockTime
 | Type       | String               | Required | ClockIn                              | Depending on the action needed, one of the values below should be used:<br />- ClockIn<br />- ClockOut<br />- BreakIn<br />- BreakOut |
 
 #### CURL
-
+```
 curl --request POST \
   --url https://www.onlinewerkrooster.be/APIOWR/api/Clock/ClockTime \
   --header 'apikey: 3fdae2c8b32348a3855af9f0377191d4' \
@@ -55,6 +57,7 @@ curl --request POST \
  "Timestamp": "2018-04-09T10:30",
   "Type": "ClockIn"
 }'
+```
 
 ### Example Response (Success)
 

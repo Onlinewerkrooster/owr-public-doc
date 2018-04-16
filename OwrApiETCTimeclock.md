@@ -28,13 +28,14 @@ https://www.onlinewerkrooster.be/APIOWR/api/Clock/ETCClock
 | CustomerKey  | Yes      | 81ad2f9b-6362-4388-9617-96a18524850c | Unique ID to identify the requester. (provided by the onlinewerkrooster.be team) |
 
 #### Body
-
+```
 {
   "NationalId": "87.08.20-209.07",
   "UserKey": "123",
   "CheckIn": "2018-03-15T13:46:50.523",
   "CheckOut": "2018-03-15T15:46:50.523"
 }
+```
 
 | Field name | Type                 | Required      | Value                  | Remarks                                                      |
 | ---------- | -------------------- | ------------- | ---------------------- | ------------------------------------------------------------ |
@@ -44,7 +45,7 @@ https://www.onlinewerkrooster.be/APIOWR/api/Clock/ETCClock
 | CheckOut   | Timestamp (ISO 8601) | Conditionally | 2018-03-15T14:46:50.52 | Date/Time to register the end of the working day             |
 
 #### CURL
-
+```
 curl --request POST \
   --url https://www.onlinewerkrooster.be/APIOWR/api/Clock/ETCClock \
   --header 'apikey: 3fdae2c8b32348a3855af9f0377191d4' \
@@ -56,6 +57,7 @@ curl --request POST \
   "CheckIn": "2018-03-15T13:46:50.523",
   "CheckOut": "2018-03-15T15:46:50.523"
 }'
+```
 
 ### Example Response (Success)
 
