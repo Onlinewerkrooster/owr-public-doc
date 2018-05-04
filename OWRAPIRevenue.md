@@ -40,7 +40,7 @@ https://www.onlinewerkrooster.be/APIOWR/api/Revenue/Revenue
 #### CURL
 ```
 curl --request POST \
-  --url https://www.onlinewerkrooster.be/APIOWR/api/Revenue/BCMaticRevenue \
+  --url https://www.onlinewerkrooster.be/APIOWR/api/Revenue/Revenue \
   --header 'apikey: 3fdae2c8b32348a3855af9f0377191d4' \
   --header 'content-type: application/json' \
   --header 'userid: 2982D3B5-4059-4D75-8BF7-E8A4296B98A6' \
