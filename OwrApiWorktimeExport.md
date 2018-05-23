@@ -74,7 +74,7 @@ curl --request GET \
 
 ### Example Response (Error)
 
-It may happen something goes wrong while querying cost overview data due to various reasons, in the list below you can a list of errors.
+It may happen something goes wrong while exporting worktime data due to various reasons, in the list below you can a list of errors.
 
 In general, when you're sure you specified the correct values, you can always contact the onlinewerkrooster.be support (support@onlinewerkrooster.be)
 
