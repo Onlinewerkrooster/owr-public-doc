@@ -6,7 +6,7 @@ CostOverview API is intended to be able to retrieve cost overview info from the 
 
 ### Endpoint
 
-https://www.onlinewerkrooster.be/APIOWR/api/CostOverview/GetCostOverview?dateFrom=2018-05-01&dateTo=2018-05-10
+https://www.onlinewerkrooster.be/APIOWR/api/CostOverview/GetCostOverview?dateFrom=2018-03-01T12:00&dateTo=2018-03-01T23:00
 
 ### Use cases
 
@@ -30,7 +30,7 @@ https://www.onlinewerkrooster.be/APIOWR/api/CostOverview/GetCostOverview?dateFro
 | dateTo     | Timestamp (ISO 8601) | Yes      | 2018-03-15T14:46:50.52 | End Date/Time of period   |
 
 ```
-https://www.onlinewerkrooster.be/APIOWR/api/CostOverview/GetCostOverview?dateFrom=2018-05-01&dateTo=2018-05-10
+https://www.onlinewerkrooster.be/APIOWR/api/CostOverview/GetCostOverview?dateFrom=2018-03-01T12:00&dateTo=2018-03-01T23:00
 ```
 
 #### Body
@@ -40,133 +40,73 @@ N/A
 #### CURL
 ```
 curl --request GET \
-  --url 'https://www.onlinewerkrooster.be/APIOWR/api/CostOverview/GetCostOverview?dateTo=2018-05-10&dateFrom=2018-05-01' \
-  --header 'apikey: 4c1396eb-e746-42c6-8b9f-1203cda76420' \
+  --url 'https://www.onlinewerkrooster.be/APIOWR/api/CostOverview/GetCostOverview?dateTo=2018-03-01T23%3A00&dateFrom=2018-03-01T12%3A00' \
+  --header 'apikey: 4ecc0220-cad5-466b-be0b-5f4cd1ceb28d' \
   --header 'content-type: application/json' \
-  --header 'userid: 5C848603-18B5-4EE8-AC3D-88F0E6FC1789'
+  --header 'userid: 5C848603-18B5-4EE8-AC3D-88F0E6FC1780'
 ```
 
 ### Example Response (Success)
 
 ```
 [
-    {
-		"TransDatetime": "2018-05-01T00:00:00",
+	{
+		"TransDatetime": "2018-03-01T12:00:00",
+		"HoursWorked": 3.0,
+		"CostAmount": 63.0
+	},
+	{
+		"TransDatetime": "2018-03-01T13:00:00",
+		"HoursWorked": 3.0,
+		"CostAmount": 63.0
+	},
+	{
+		"TransDatetime": "2018-03-01T14:00:00",
+		"HoursWorked": 1.25,
+		"CostAmount": 26.25
+	},
+	{
+		"TransDatetime": "2018-03-01T15:00:00",
 		"HoursWorked": 0.0,
 		"CostAmount": 0.0
 	},
 	{
-		"TransDatetime": "2018-05-01T01:00:00",
+		"TransDatetime": "2018-03-01T16:00:00",
 		"HoursWorked": 0.0,
 		"CostAmount": 0.0
 	},
 	{
-		"TransDatetime": "2018-05-01T02:00:00",
-		"HoursWorked": 0.0,
-		"CostAmount": 0.0
+		"TransDatetime": "2018-03-01T17:00:00",
+		"HoursWorked": 1.5,
+		"CostAmount": 31.5
 	},
 	{
-		"TransDatetime": "2018-05-01T03:00:00",
-		"HoursWorked": 0.0,
-		"CostAmount": 0.0
+		"TransDatetime": "2018-03-01T18:00:00",
+		"HoursWorked": 4.0,
+		"CostAmount": 84.0
 	},
 	{
-		"TransDatetime": "2018-05-01T04:00:00",
-		"HoursWorked": 0.0,
-		"CostAmount": 0.0
+		"TransDatetime": "2018-03-01T19:00:00",
+		"HoursWorked": 4.0,
+		"CostAmount": 84.0
 	},
 	{
-		"TransDatetime": "2018-05-01T05:00:00",
-		"HoursWorked": 0.0,
-		"CostAmount": 0.0
+		"TransDatetime": "2018-03-01T20:00:00",
+		"HoursWorked": 4.0,
+		"CostAmount": 84.0
 	},
 	{
-		"TransDatetime": "2018-05-01T06:00:00",
-		"HoursWorked": 0.0,
-		"CostAmount": 0.0
+		"TransDatetime": "2018-03-01T21:00:00",
+		"HoursWorked": 3.0,
+		"CostAmount": 63.0
 	},
 	{
-		"TransDatetime": "2018-05-01T07:00:00",
-		"HoursWorked": 0.0,
-		"CostAmount": 0.0
+		"TransDatetime": "2018-03-01T22:00:00",
+		"HoursWorked": 1.25,
+		"CostAmount": 26.25
 	},
 	{
-		"TransDatetime": "2018-05-01T08:00:00",
-		"HoursWorked": 0.0,
-		"CostAmount": 0.0
-	},
-	{
-		"TransDatetime": "2018-05-01T09:00:00",
-		"HoursWorked": 0.0,
-		"CostAmount": 0.0
-	},
-	{
-		"TransDatetime": "2018-05-01T10:00:00",
-		"HoursWorked": 0.0,
-		"CostAmount": 0.0
-	},
-	{
-		"TransDatetime": "2018-05-01T11:00:00",
-		"HoursWorked": 0.0,
-		"CostAmount": 0.0
-	},
-	{
-		"TransDatetime": "2018-05-01T12:00:00",
-		"HoursWorked": 0.0,
-		"CostAmount": 0.0
-	},
-	{
-		"TransDatetime": "2018-05-01T13:00:00",
-		"HoursWorked": 0.0,
-		"CostAmount": 0.0
-	},
-	{
-		"TransDatetime": "2018-05-01T14:00:00",
-		"HoursWorked": 0.0,
-		"CostAmount": 0.0
-	},
-	{
-		"TransDatetime": "2018-05-01T15:00:00",
-		"HoursWorked": 0.0,
-		"CostAmount": 0.0
-	},
-	{
-		"TransDatetime": "2018-05-01T16:00:00",
-		"HoursWorked": 0.0,
-		"CostAmount": 0.0
-	},
-	{
-		"TransDatetime": "2018-05-01T17:00:00",
-		"HoursWorked": 0.0,
-		"CostAmount": 0.0
-	},
-	{
-		"TransDatetime": "2018-05-01T18:00:00",
-		"HoursWorked": 0.0,
-		"CostAmount": 0.0
-	},
-	{
-		"TransDatetime": "2018-05-01T19:00:00",
-		"HoursWorked": 0.0,
-		"CostAmount": 0.0
-	},
-	{
-		"TransDatetime": "2018-05-01T20:00:00",
-		"HoursWorked": 0.0,
-		"CostAmount": 0.0
-	},
-	{
-		"TransDatetime": "2018-05-01T21:00:00",
-		"HoursWorked": 0.0,
-		"CostAmount": 0.0
-	},
-	{
-		"TransDatetime": "2018-05-01T22:00:00",
-		"HoursWorked": 0.0,
-		"CostAmount": 0.0
-	},
-	{
-		"TransDatetime": "2018-05-01T23:00:00",
+		"TransDatetime": "2018-03-01T23:00:00",
 		"HoursWorked": 0.0,
 		"CostAmount": 0.0
 	}
