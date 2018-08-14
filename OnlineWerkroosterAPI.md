@@ -20,6 +20,7 @@ The API itself is public accessible for everyone, but to make sure the data is p
   - [ETC Timeclock API](OwrApiETCTimeclock.md)
   - [ClockTime](OwrApiClockTime.md)
   - [ClockTimeSpecified](OwrApiClockTimeSpecified.md)
+  - [Clock] (OwrApiClock.md)
 
 - Revenue
   - [BCMaticRevenue](OwrApiBCMaticRevenue.md)
@@ -27,11 +28,19 @@ The API itself is public accessible for everyone, but to make sure the data is p
 - Cost Overview
 
   - [Cost Overview](OwrApiCostOverview.md)
-  
+
 - Worktime Export
     - [Worktime Export](OwrApiWorktimeExport.md)
 
-    ​
+- Employee
+    - [Employee](OwrApiEmployee.md)
+
+- Planning
+    - [Planning](OwrApiPlanning.md)
+    
+
+
+​
 
   ​
 
