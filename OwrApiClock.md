@@ -22,6 +22,7 @@ URL: **.../api/clock/registered**
 | Name   | Required | Value                            | Remarks                                                      |
 | ------ | -------- | -------------------------------- | ------------------------------------------------------------ |
 | Apikey | Yes      | 3fdae2c8b32348a3855af9f0377191d4 | Unique ID to identify the source to query data. (provided by onlinewerkrooster.be team) |
+| content-type | Yes      | application/json | JSON data |
 
 #### URL Parameters
 
