@@ -73,7 +73,12 @@ curl --request POST \
 ### Example Response (Success)
 
 ```json
-
+{
+	"companyId": 2,
+	"eventId": 8138,
+	"extEventId": 10001,
+	"extEventNumber": "10001"
+}
 ```
 
 ## GET api/events/timeClock
