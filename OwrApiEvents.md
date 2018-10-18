@@ -16,7 +16,6 @@ https://owr-public-services-prod.herokuapp.com/api/events
 | ------------ | -------- | ------------------------------------ | ------------------------------------------------------------ |
 | apikey       | Yes      | 3fdae2c8b32348a3855af9f0377191d4     | Unique ID to identify the requester (provided by onlinewerkrooster.be team) |
 | content-type | Yes      | application/json                     | JSON data                                                    |
-| CustomerKey  | Yes      | 81ad2f9b-6362-4388-9617-96a18524850c | Unique ID to identify the requester. (provided by the onlinewerkrooster.be team) |
 
 #### Body
 
@@ -31,7 +30,7 @@ https://owr-public-services-prod.herokuapp.com/api/events
         "start": "2018-10-26T14:00:00",
         "end": "2018-10-26T20:00:00"
     },
-    "managerINSS": "87082020907",
+    "managerINSS": "99123199999",
     "numOfEmployees": 15
 }
 ```
@@ -45,7 +44,7 @@ https://owr-public-services-prod.herokuapp.com/api/events
 | extCustomerNumber | String               | Yes      | 1001                 | Alphanumeric identifier of the customer in the 3rd party system. |
 | eventPeriod.start | Timestamp (ISO 8601) | Yes      | 2018-10-26T14:00:00  | Start datetime of event                                      |
 | eventPeriod.end   | Timestamp (ISO 8601) | Yes      | 2018-10-26T20:00:00  | end datetime of event                                        |
-| managerINSS       | String               | Yes      | 87082020907          | National Insurance Number of the manager of the event.       |
+| managerINSS       | String               | Yes      | 99123199999          | National Insurance Number of the manager of the event.       |
 | numOfEmployees    | Number               | Yes      | 15                   | Amount of employees needed for event.                        |
 
 #### CURL
@@ -65,7 +64,7 @@ curl --request POST \
         "start": "2018-10-26T14:00:00",
         "end": "2018-10-26T20:00:00"
     },
-    "managerINSS": "87.08.20-209.07",
+    "managerINSS": "99.12.31-99999",
     "numOfEmployees": 15
 }'
 ```
@@ -91,7 +90,6 @@ curl --request POST \
 | ------------ | -------- | ------------------------------------ | ------------------------------------------------------------ |
 | Apikey       | Yes      | 3fdae2c8b32348a3855af9f0377191d4     | Unique ID to identify the source to query data. (provided by onlinewerkrooster.be team) |
 | content-type | Yes      | application/json                     | JSON data                                                    |
-| UserId       | Yes      | 81ad2f9b-6362-4388-9617-96a18524850c | Unique ID to identify the requester. (provided by the onlinewerkrooster.be team) |
 
 #### URL Parameters
 
@@ -138,8 +136,8 @@ curl --request GET \
 				"breakTimeInMinutes": 0,
 				"workedTimeInMinutes": 850,
 				"employee": {
-					"firstName": "Wim",
-					"lastName": "De Mulder",
+					"firstName": "Joske",
+					"lastName": "Vermeulen",
 					"statute": {
 						"id": 1,
 						"name": "Student"
@@ -165,8 +163,8 @@ curl --request GET \
 				"breakTimeInMinutes": 0,
 				"workedTimeInMinutes": 560,
 				"employee": {
-					"firstName": "Wim",
-					"lastName": "De Mulder",
+					"firstName": "Joske",
+					"lastName": "Vermeulen",
 					"statute": {
 						"id": 1,
 						"name": "Student"
@@ -187,7 +185,6 @@ curl --request GET \
 | ------------ | -------- | ------------------------------------ | ------------------------------------------------------------ |
 | Apikey       | Yes      | 3fdae2c8b32348a3855af9f0377191d4     | Unique ID to identify the source to query data. (provided by onlinewerkrooster.be team) |
 | content-type | Yes      | application/json                     | JSON data                                                    |
-| UserId       | Yes      | 81ad2f9b-6362-4388-9617-96a18524850c | Unique ID to identify the requester. (provided by the onlinewerkrooster.be team) |
 
 #### URL Parameters
 
@@ -236,8 +233,8 @@ curl --request GET \
 				"totalBreaktime": 0,
 				"totalWorktime": 22,
 				"employee": {
-					"firstName": "Christina",
-					"lastName": "Ardies",
+					"firstName": "Pieter",
+					"lastName": "Peeters",
 					"statute": {
 						"id": 4,
 						"name": "Flexi"
@@ -252,8 +249,8 @@ curl --request GET \
 				"totalBreaktime": 0,
 				"totalWorktime": 22,
 				"employee": {
-					"firstName": "Celeste",
-					"lastName": "Vaganee",
+					"firstName": "Joske",
+					"lastName": "Vermeulen",
 					"statute": {
 						"id": 1,
 						"name": "Student"
@@ -268,8 +265,8 @@ curl --request GET \
 				"totalBreaktime": 0,
 				"totalWorktime": 22,
 				"employee": {
-					"firstName": "Eva",
-					"lastName": "Dours",
+					"firstName": "Max",
+					"lastName": "Verstappen",
 					"statute": {
 						"id": 4,
 						"name": "Flexi"
@@ -284,8 +281,8 @@ curl --request GET \
 				"totalBreaktime": 0,
 				"totalWorktime": 22,
 				"employee": {
-					"firstName": "Hilde ",
-					"lastName": "Serneels",
+					"firstName": "Maria",
+					"lastName": "Peeters",
 					"statute": {
 						"id": 4,
 						"name": "Flexi"
@@ -300,8 +297,8 @@ curl --request GET \
 				"totalBreaktime": 0,
 				"totalWorktime": 22,
 				"employee": {
-					"firstName": "V",
-					"lastName": "Beuselinck",
+					"firstName": "stef",
+					"lastName": "Peeters",
 					"statute": {
 						"id": 4,
 						"name": "Flexi"
@@ -316,8 +313,8 @@ curl --request GET \
 				"totalBreaktime": 0,
 				"totalWorktime": 22,
 				"employee": {
-					"firstName": "Hermans",
-					"lastName": "Kenny",
+					"firstName": "Wim",
+					"lastName": "Vermeulen",
 					"statute": {
 						"id": 4,
 						"name": "Flexi"
@@ -332,8 +329,8 @@ curl --request GET \
 				"totalBreaktime": 0,
 				"totalWorktime": 11,
 				"employee": {
-					"firstName": "Jill",
-					"lastName": "Vrijdags",
+					"firstName": "Jan",
+					"lastName": "Jansen",
 					"statute": {
 						"id": 4,
 						"name": "Flexi"
@@ -361,8 +358,8 @@ curl --request GET \
 				"totalBreaktime": 0,
 				"totalWorktime": 22,
 				"employee": {
-					"firstName": "Christina",
-					"lastName": "Ardies",
+					"firstName": "Pieter",
+					"lastName": "Peeters",
 					"statute": {
 						"id": 4,
 						"name": "Flexi"
@@ -377,8 +374,8 @@ curl --request GET \
 				"totalBreaktime": 0,
 				"totalWorktime": 22,
 				"employee": {
-					"firstName": "Celeste",
-					"lastName": "Vaganee",
+					"firstName": "Joske",
+					"lastName": "Vermeulen",
 					"statute": {
 						"id": 1,
 						"name": "Student"
@@ -393,8 +390,8 @@ curl --request GET \
 				"totalBreaktime": 0,
 				"totalWorktime": 22,
 				"employee": {
-					"firstName": "Eva",
-					"lastName": "Dours",
+					"firstName": "Max",
+					"lastName": "Verstappen",
 					"statute": {
 						"id": 4,
 						"name": "Flexi"
@@ -409,8 +406,8 @@ curl --request GET \
 				"totalBreaktime": 0,
 				"totalWorktime": 22,
 				"employee": {
-					"firstName": "Hilde ",
-					"lastName": "Serneels",
+					"firstName": "stef",
+					"lastName": "Peeters",
 					"statute": {
 						"id": 4,
 						"name": "Flexi"
@@ -425,8 +422,8 @@ curl --request GET \
 				"totalBreaktime": 0,
 				"totalWorktime": 22,
 				"employee": {
-					"firstName": "V",
-					"lastName": "Beuselinck",
+					"firstName": "Maria",
+					"lastName": "Peeters",
 					"statute": {
 						"id": 4,
 						"name": "Flexi"
@@ -441,8 +438,8 @@ curl --request GET \
 				"totalBreaktime": 0,
 				"totalWorktime": 22,
 				"employee": {
-					"firstName": "Hermans",
-					"lastName": "Kenny",
+					"firstName": "wim",
+					"lastName": "Vermeulen",
 					"statute": {
 						"id": 4,
 						"name": "Flexi"
@@ -457,8 +454,8 @@ curl --request GET \
 				"totalBreaktime": 0,
 				"totalWorktime": 11,
 				"employee": {
-					"firstName": "Jill",
-					"lastName": "Vrijdags",
+					"firstName": "Jan",
+					"lastName": "Jansen",
 					"statute": {
 						"id": 4,
 						"name": "Flexi"
