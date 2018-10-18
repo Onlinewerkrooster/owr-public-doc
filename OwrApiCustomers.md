@@ -16,7 +16,6 @@ https://owr-public-services-prod.herokuapp.com/api/customers
 | ------------ | -------- | ------------------------------------ | ------------------------------------------------------------ |
 | apikey       | Yes      | 3fdae2c8b32348a3855af9f0377191d4     | Unique ID to identify the requester (provided by onlinewerkrooster.be team) |
 | content-type | Yes      | application/json                     | JSON data                                                    |
-| CustomerKey  | Yes      | 81ad2f9b-6362-4388-9617-96a18524850c | Unique ID to identify the requester. (provided by the onlinewerkrooster.be team) |
 
 #### Body
 
