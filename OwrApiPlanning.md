@@ -1,6 +1,6 @@
 ## Planning API
 
-Employee API is intended to be able to retrieve planning info from the Onlinewerkrooster.be application. 
+Planning API is intended to be able to retrieve planning info from the Onlinewerkrooster.be application. 
 
 ### Endpoint
 
