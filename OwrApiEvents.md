@@ -4,7 +4,7 @@ Events API is intended to be able to retrieve and create event info from the Onl
 
 ## Endpoint
 
-https://owr-public-services-prod.herokuapp.com/api/events
+https://services.onlinewerkrooster.be/api/events
 
 ## POST api/events
 

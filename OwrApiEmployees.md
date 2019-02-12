@@ -4,7 +4,7 @@ Employee API is intended to be able to retrieve employee info from the Onlinewer
 
 ### Endpoint
 
-https://owr-public-services-prod.herokuapp.com/api/employees
+https://services.onlinewerkrooster.be/api/employees
 
 ## GET /:id 
 

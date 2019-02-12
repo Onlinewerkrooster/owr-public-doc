@@ -4,7 +4,7 @@ Employee API is intended to be able to retrieve planning info from the Onlinewer
 
 ### Endpoint
 
-https://owr-public-services-prod.herokuapp.com/api/planning
+https://services.onlinewerkrooster.be/api/planning
 
 ## GET /:id
 
