@@ -25,7 +25,7 @@ https://services.onlinewerkrooster.be/api/employees
 
 Add the id to the end of the URL to retrieve the data for a single employee.
 
-**https://owr-public-services-prod.herokuapp.com/api/employees/1** would retrieve the employee data for employee ID **1**
+**https://services.onlinewerkrooster.be/api/employees/1** would retrieve the employee data for employee ID **1**
 
 #### Body
 
@@ -34,7 +34,7 @@ N/A
 #### CURL
 ```
 curl --request GET \
-  --url https://owr-public-services-prod.herokuapp.com/api/employees/ \
+  --url https://services.onlinewerkrooster.be/api/employees/ \
   --header 'apikey: 8689DB67-D12C-46A5-B4F9-74E70D1B37CF' \
   --header 'content-type: application/json'
 ```
@@ -43,34 +43,74 @@ curl --request GET \
 
 ```json
 [
-	{
-		"id": 1,
-		"nationalInsuranceNumber": "",
-		"employeeNumber": "",
-		"firstName": "admin",
-		"lastName": "Onlinewerkrooster",
-		"workspaces": [
-			"Westpunt"
-		],
-		"function": "",
-		"costPerHour": 0,
-		"wagePerHour": 1,
-		"hoursPerWeek": 40
-	},
-	{
-		"id": 4,
-		"nationalInsuranceNumber": "92.06.17-317.80",
-		"employeeNumber": "314428",
-		"firstName": "Michael",
-		"lastName": "Van kessel",
-		"workspaces": [
-			"Westpunt"
-		],
-		"function": "",
-		"costPerHour": 0,
-		"wagePerHour": 1,
-		"hoursPerWeek": 11.483333333333333
-	}]
+  {
+    "id": 1,
+    "nationalInsuranceNumber": "",
+    "employeeNumber": "",
+    "firstName": "Scott",
+    "lastName": "Tiger",
+    "address": "Akkerstraat 33",
+    "city": "Dessel",
+    "postalCode": "2480",
+    "country": "BELGIUM",
+    "residenceAddress": "",
+    "residenceCity": "",
+    "residencePostalCode": "",
+    "residenceCountry": "BELGIUM",
+    "mobile": "0472901130",
+    "phone": "4",
+    "bankAccountNumber": "",
+    "bic": "",
+    "gender": 0,
+    "birthDate": " ",
+    "birthPlace": " ",
+    "birthCountry": "",
+    "maritalStatus": 0,
+    "dependentChildren": -2,
+    "highestEducationLevel": 0,
+    "nationality": "",
+    "workspaces": [
+      "WS1"
+         ],
+    "function": "Kelner",
+    "costPerHour": 0,
+    "wagePerHour": 1,
+    "hoursPerWeek": 40
+  },
+  {
+    "id": 3,
+    "nationalInsuranceNumber": "87082020907",
+    "employeeNumber": "1088",
+    "firstName": "John",
+    "lastName": "Doe",
+    "address": "",
+    "city": "",
+    "postalCode": "",
+    "country": "BELGIUM",
+    "residenceAddress": "",
+    "residenceCity": "",
+    "residencePostalCode": "",
+    "residenceCountry": "BELGIUM",
+    "mobile": "",
+    "phone": " ",
+    "bankAccountNumber": "",
+    "bic": "",
+    "gender": 0,
+    "birthDate": "1/01/2001",
+    "birthPlace": "1/01/2001",
+    "birthCountry": "",
+    "maritalStatus": 0,
+    "dependentChildren": -2,
+    "highestEducationLevel": 0,
+    "nationality": "",
+    "workspaces": [
+      "Galatea"
+    ],
+    "function": "",
+    "costPerHour": 0,
+    "wagePerHour": 1,
+    "hoursPerWeek": 38
+  }]
 ```
 
 
