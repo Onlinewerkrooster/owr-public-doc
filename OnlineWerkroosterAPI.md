@@ -21,26 +21,22 @@ The API itself is public accessible for everyone, but to make sure the data is p
   - [ClockTime](OwrApiClockTime.md)
   - [ClockTimeSpecified](OwrApiClockTimeSpecified.md)
   - [Clock](OwrApiClock.md)
-
 - Revenue
   - [BCMaticRevenue](OwrApiBCMaticRevenue.md)
-
 - Cost Overview
 
   - [Cost Overview](OwrApiCostOverview.md)
-
 - Worktime Export
     - [Worktime Export](OwrApiWorktimeExport.md)
-
 - Employee
-    - [Employee](OwrApiEmployee.md)
-
+    - [Employee](OwrApiEmployees.md)
 - Planning
     - [Planning](OwrApiPlanning.md)
-    
+- Query
+    - [Query](OwrApiQuery.md)
 
 
-​
+
 
   ​
 
