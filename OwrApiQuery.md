@@ -16,26 +16,102 @@ If needed, you can contact onlinewerkrooster support (support@onlinewerkrooster.
 
 https://owr-public-services-prod.herokuapp.com/api/query/
 
+## GET /api/query/entities/meta
+
+GET API to retrieve which entities are queryable and returns detailed information about the entity
+
+#### Header
+
+| Name            | Required | Value                            | Remarks                                                      |
+| --------------- | -------- | -------------------------------- | ------------------------------------------------------------ |
+| apikey          | Yes      | 3fdae2c8b32348a3855af9f0377191d4 | Unique ID to identify the requester (provided by onlinewerkrooster.be team) |
+| Accept-language | No       | nl                               | Language to retrieve label (en,nl,fr)                        |
+
+### Query parameters
+
+| Name     | Required | Value    | Remarks                                 |
+| -------- | -------- | -------- | --------------------------------------- |
+| entities | No       | Employee | Array of entities to retrieve metadata. |
+
+### CURL
+
+```
+curl --request GET \
+  --url 'https://owr-public-services-prod.herokuapp.com/api/query/entities/meta?entities=employee&entities=planning' \
+  --header 'apikey: 927073B6-3D9E-A2AA-98FA-83573D2CC57E'
+```
+
+### Response
+
+```json
+[
+  {
+    "name": "Employee",
+    "label": "Medewerker",
+    "properties": [
+      {
+        "key": "Id",
+        "type": "number",
+        "label": "Id",
+        "translations": [
+          {
+            "lang": "en",
+            "description": "Id"
+          },
+          {
+            "lang": "nl",
+            "description": "Id"
+          },
+          {
+            "lang": "fr",
+            "description": "Id"
+          }
+        ]
+      },
+      {
+        "key": "Email",
+        "type": "string",
+        "label": "Email",
+        "translations": [
+          {
+            "lang": "en",
+            "description": "Email"
+          },
+          {
+            "lang": "nl",
+            "description": "Email"
+          },
+          {
+            "lang": "fr",
+            "description": "Email"
+          }
+        ]
+      },
+...
+]
+```
+
+
+
 ## GET /api/query/entities
 
 #### List of queryable entities
 
-| Name            | Description                       |
-| --------------- | --------------------------------- |
-| Company         | Company details                   |
-| Workspace       | Workspace details                 |
-| Workarea        | Workarea details                  |
-| Timeclock       | Timeclock details                 |
-| Planning        | Planning details (workday)        |
-| Employee        | Employee details                  |
-| EmployeeCompany | Employee details on company level |
+A list of all queryable entities can be retrived with the 'meta' API
+
+```
+curl --request GET \
+  --url 'https://owr-public-services-dev.herokuapp.com/api/query/entities/meta \
+  --header 'apikey: 927073B6-3D9E-A2AA-98FA-83573D2CC57E'
+```
 
 #### Header
 
-| Name         | Required | Value                            | Remarks                                                      |
-| ------------ | -------- | -------------------------------- | ------------------------------------------------------------ |
-| apikey       | Yes      | 3fdae2c8b32348a3855af9f0377191d4 | Unique ID to identify the requester (provided by onlinewerkrooster.be team) |
-| content-type | Yes      | application/json                 | JSON data                                                    |
+| Name            | Required | Value                            | Remarks                                                      |
+| --------------- | -------- | -------------------------------- | ------------------------------------------------------------ |
+| apikey          | Yes      | 3fdae2c8b32348a3855af9f0377191d4 | Unique ID to identify the requester (provided by onlinewerkrooster.be team) |
+| content-type    | Yes      | application/json                 | JSON data                                                    |
+| Accept-Language | No       | nl                               | Language used to get translatable values.                    |
 
 #### Body
 
@@ -158,23 +234,102 @@ curl --request GET \
 }
 ```
 
+## GET /api/query/reports/meta
+
+GET API to retrieve which reports are queryable and returns detailed information about the entity
+
+#### Header
+
+| Name            | Required | Value                            | Remarks                                                      |
+| --------------- | -------- | -------------------------------- | ------------------------------------------------------------ |
+| apikey          | Yes      | 3fdae2c8b32348a3855af9f0377191d4 | Unique ID to identify the requester (provided by onlinewerkrooster.be team) |
+| Accept-language | No       | nl                               | Language to retrieve label (en,nl,fr)                        |
+
+### Query parameters
+
+| Name    | Required | Value    | Remarks                                |
+| ------- | -------- | -------- | -------------------------------------- |
+| reports | No       | Employee | Array of reports to retrieve metadata. |
+
+### CURL
+
+```
+curl --request GET \
+  --url 'https://owr-public-services-prod.herokuapp.com/api/query/reports/meta?reports=CUMULIO_EMPLOYEES&entities=CUMULIO_PLANNING' \
+  --header 'apikey: 927073B6-3D9E-A2AA-98FA-83573D2CC57E'
+```
+
+### Response
+
+```json
+[
+  {
+    "name": "CUMULIO_PLANNING",
+    "label": "Cumul.io Planification",
+    "properties": [
+      [
+        {
+          "key": "EmployeeId",
+          "type": "number",
+          "label": "Id",
+          "translations": [
+            {
+              "lang": "en",
+              "description": "Id"
+            },
+            {
+              "lang": "nl",
+              "description": "Id"
+            },
+            {
+              "lang": "fr",
+              "description": "Id"
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "key": "EmployeeCompanyId",
+          "type": "number",
+          "label": "Id",
+          "translations": [
+            {
+              "lang": "en",
+              "description": "Id"
+            },
+            {
+              "lang": "nl",
+              "description": "Id"
+            },
+            {
+              "lang": "fr",
+              "description": "Id"
+            }
+          ]
+ ...
+ ]
+```
+
 ## GET /api/query/reports
 
 #### List of predefined reports
 
-| Name                | Description                                      |
-| ------------------- | ------------------------------------------------ |
-| CUMULIO_EMPLOYEES   | Employees (including company details)            |
-| CUMULIO_PLANNING    | Planning (+ workspace + workarea)                |
-| CUMULIO_TIMECLOCK   | Timeclock (+ workspace + workarea)               |
-| CUMULIO_WORKRECORDS | Combination of planning + timeclock (OUTER join) |
+A list of all queryable reports can be retrived with the 'meta' API
+
+```
+curl --request GET \
+  --url 'https://owr-public-services-dev.herokuapp.com/api/query/reports/meta \
+  --header 'apikey: 927073B6-3D9E-A2AA-98FA-83573D2CC57E'
+```
 
 #### Header
 
-| Name         | Required | Value                            | Remarks                                                      |
-| ------------ | -------- | -------------------------------- | ------------------------------------------------------------ |
-| apikey       | Yes      | 3fdae2c8b32348a3855af9f0377191d4 | Unique ID to identify the requester (provided by onlinewerkrooster.be team) |
-| content-type | Yes      | application/json                 | JSON data                                                    |
+| Name           | Required | Value                            | Remarks                                                      |
+| -------------- | -------- | -------------------------------- | ------------------------------------------------------------ |
+| apikey         | Yes      | 3fdae2c8b32348a3855af9f0377191d4 | Unique ID to identify the requester (provided by onlinewerkrooster.be team) |
+| content-type   | Yes      | application/json                 | JSON data                                                    |
+| Accept-Langueg | No       | nl                               | Language used to get translatable values.                    |
 
 #### Body
 
