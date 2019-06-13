@@ -26,8 +26,8 @@ The API itself is public accessible for everyone, but to make sure the data is p
 - Cost Overview
 
   - [Cost Overview](OwrApiCostOverview.md)
-- Worktime Export
-    - [Worktime Export](OwrApiWorktimeExport.md)
+- Payroll (formerly known as Worktime Export)
+    - [Payroll](OwrApiPayroll.md)
 - Employee
     - [Employee](OwrApiEmployees.md)
 - Planning
