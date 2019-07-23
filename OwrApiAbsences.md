@@ -109,17 +109,18 @@ https://services.onlinewerkrooster.be/api/absences/bulk
 
 #### Body
 
-| Field name         | Type              | Required       | Value      | Remarks                                          |
-| ------------------ | ----------------- | -------------- | ---------- | ------------------------------------------------ |
-| period.start       | Date              | Yes            | 2019-08-01 | Start of period.                                 |
-| period.end         | Date              | Yes            | 2019-08-31 | End of period.                                   |
-| absences[]         | Array of absences | Yes            |            |                                                  |
-| .employeeNum       | String            | Yes            | 180        | Employee Number                                  |
-| .absenceType       | String            | Yes            | PT-ABSENCE | Name of absence type known in OWR                |
-| .date              | Date              | Yes            | 2019-08-11 | Date of absence                                  |
-| .durationInMinutes | Number            | Conditionally* | 480        | Duration (**in minutes**)                        |
-| .startTime         | String            | Conditionally* | 11:00      | Start time (in HH:MM)                            |
-| .dayPart           | Number            | Conditionally* | 0/1/2      | 0 - full day<br />1 - morning<br />2 - afternoon |
+| Field name                 | Type              | Required       | Value      | Remarks                                          |
+| -------------------------- | ----------------- | -------------- | ---------- | ------------------------------------------------ |
+| period.start               | Date              | Yes            | 2019-08-01 | Start of period.                                 |
+| period.end                 | Date              | Yes            | 2019-08-31 | End of period.                                   |
+| absences[]                 | Array of absences | Yes            |            |                                                  |
+| .employee.employeeNumber   | String            | Yes            | 180        | Employee Number                                  |
+| .absenceType.name          | String            | No             | PT-ABSENCE | Name of absence type known in OWR                |
+| .absenceType.reportingCode | String            | No             | 9999       | Reporting code of absence type in OWR            |
+| .date                      | Date              | Yes            | 2019-08-11 | Date of absence                                  |
+| .durationInMinutes         | Number            | Conditionally* | 480        | Duration (**in minutes**)                        |
+| .startTime                 | String            | Conditionally* | 11:00      | Start time (in HH:MM)                            |
+| .dayPart                   | Number            | Conditionally* | 0/1/2      | 0 - full day<br />1 - morning<br />2 - afternoon |
 
 **
 
@@ -135,15 +136,23 @@ Either `dayPart`or `startTime + durationInMinutes` is required.
 	},
 	"absences": [
 		{
-			"employeeNum": "180",
-			"absenceType": "PT-ABSENCE",
+			"employee": {
+				"employeeNumber": "180"
+			},
+			"absenceType": {
+				"reportingCode": "9999"
+			},
 			"date": "2019-08-10",
 			"durationInMinutes": 480,
 			"startTime": "10:00"
 		},
 		{
-			"employeeNum": "180",
-			"absenceType": "PT-ABSENCE",
+			"employee": {
+				"employeeNumber": "180"
+			},
+			"absenceType": {
+				"reportingCode": "9999"
+			},
 			"date": "2019-08-11",
 			"dayPart": 0
 		}
