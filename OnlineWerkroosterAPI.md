@@ -33,7 +33,7 @@ The API itself is public accessible for everyone, but to make sure the data is p
 - Planning
     - [Planning](OwrApiPlanning.md)
 - Absences
-    - [Absences](OwrAbsences.md)
+    - [Absences](OwrApiAbsences.md)
 - Query
     - [Query](OwrApiQuery.md)
 
