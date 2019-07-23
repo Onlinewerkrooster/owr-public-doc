@@ -1,6 +1,6 @@
 ## Absences API
 
-Employee API is intended to be able to retrieve/create absence info from the Onlinewerkrooster.be application. 
+Absences API is intended to be able to retrieve/create absence info from the Onlinewerkrooster.be application. 
 
 ### Endpoint
 
