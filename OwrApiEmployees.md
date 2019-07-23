@@ -1,6 +1,6 @@
 ## Employee API
 
-Employee API is intended to be able to retrieve employee info from the Onlinewerkrooster.be application. 
+Employee API is intended to be able to retrieve/create employee info from the Onlinewerkrooster.be application. 
 
 ### Endpoint
 
@@ -113,7 +113,82 @@ curl --request GET \
   }]
 ```
 
+## POST /
 
+### Use cases
+
+- Create employee in OWR
+- Update employee in OWR
+
+### Example Request
+
+#### Header
+
+| Name   | Required | Value                            | Remarks                                                      |
+| ------ | -------- | -------------------------------- | ------------------------------------------------------------ |
+| Apikey | Yes      | 3fdae2c8b32348a3855af9f0377191d4 | Unique ID to identify the source to query data. (provided by onlinewerkrooster.be team) |
+
+#### Body
+
+| Field name              | Type            | Required | Value           | Remarks                                                 |
+| ----------------------- | --------------- | -------- | --------------- | ------------------------------------------------------- |
+| employeeNumber          | String          | Yes      | 100001          | **Unique** alphanumeric identifier                      |
+| firstName               | String          | Yes      | John            | First name                                              |
+| lastName                | String          | Yes      | Doe             | Lastname                                                |
+| email                   | String          | Yes      | john.doe@owr.be | Email address (used to login in OWR)                    |
+| nationalInsuranceNumber | String          | No       | 000000000097    | INSS number (modulo 97 check)                           |
+| contractStartDate       | Date            | No       | 2019-01-01      | Contract start date                                     |
+| contractEndDate         | Date            | No       | 2020-12-31      | Contract end date                                       |
+| workspaces              | Array of string | Yes      | 'CZ'            | List of unique workspace identifiers (external numbers) |
+
+##### JSON
+
+```json
+{
+	"employeeNumber": "100001",
+	"firstName": "John",
+	"lastName": "Doe",
+	"email": "john.doe@owr.be",
+	"nationalInsuranceNumber": "000000000097",
+	"contractStartDate": "2019-01-01",
+	"contractEndDate": "2020-12-31",
+	"workspaces": [
+		"CZ"
+	]
+}
+```
+
+#### CURL
+
+```
+curl --request POST \
+  --url https://owr-public-services-dev.herokuapp.com/api/employees/ \
+  --header 'apikey: 51703F12-56FC-4AF4-B911-DDADCA2BE6BD' \
+  --header 'content-type: application/json' \
+  --data '{
+	"employeeNumber": "100001",
+	"firstName": "John",
+	"lastName": "Doe",
+	"email": "john.doe@owr.be",
+	"nationalInsuranceNumber": "000000000097",
+	"contractStartDate": "2019-01-01",
+	"contractEndDate": "2020-12-31",
+	"workspaces": [
+		"CZ"
+	]
+}'
+```
+
+### Example Response (Success)
+
+```json
+{
+  "employeeNumber": "100001",
+  "email": "john.doe@owr.be"
+}
+```
+
+## 
 
 ### Example Response (Error)
 

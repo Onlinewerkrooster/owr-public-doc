@@ -55,50 +55,74 @@ curl --request GET \
 
 ```json
 [
-	{
-		"id": 38201,
-		"time": {
-			"start": "2018-08-03T07:00:00.000Z",
-			"end": "2018-08-03T23:57:00.000Z"
-		},
-		"timeActual": {
-			"start": "2018-08-03T07:00:00.000Z",
-			"end": "2018-08-03T23:57:00.000Z"
-		},
-		"workedTimeInMinutes": 474,
-		"breakTimeInMinutes": 543,
-		"employee": {
-			"id": 2223,
-			"employeeNumber": "00680090093486001",
-			"nationalInsuranceNumber": ""
-		},
-		"workspace": "KNOK556",
-		"workArea": "",
-		"createdOn": "2018-08-03T07:00:00.000Z",
-		"modifiedOn": null
-	},
-	{
-		"id": 38397,
-		"time": {
-			"start": "2018-08-04T06:56:00.000Z",
-			"end": "2018-08-04T23:29:00.000Z"
-		},
-		"timeActual": {
-			"start": "2018-08-04T06:56:00.000Z",
-			"end": "2018-08-04T23:29:00.000Z"
-		},
-		"workedTimeInMinutes": 700,
-		"breakTimeInMinutes": 293,
-		"employee": {
-			"id": 2223,
-			"employeeNumber": "00680090093486001",
-			"nationalInsuranceNumber": ""
-		},
-		"workspace": "KNOK556",
-		"workArea": "",
-		"createdOn": "2018-08-04T06:56:00.000Z",
-		"modifiedOn": null
-	}
+	 {
+    "id": 18567,
+    "time": {
+      "start": "2019-05-04T09:05:00.000Z",
+      "end": "2019-05-04T16:00:00.000Z"
+    },
+    "timeActual": {
+      "start": "2019-05-04T09:05:00.000Z",
+      "end": "2019-05-04T15:58:00.000Z"
+    },
+    "workedTimeInMinutes": 415,
+    "breaks": [],
+    "breakTimeInMinutes": 0,
+    "employee": {
+      "id": 191,
+      "employeeNumber": "191",
+      "nationalInsuranceNumber": "00000000097"
+    },
+    "workspace": {
+      "name": "M HKA zaal",
+      "externalNumber": "MHKAZAAL"
+    },
+    "workArea": {
+      "name": "bediende host",
+      "externalId": 0,
+      "externalNumber": "WORKAREA.58"
+    },
+    "createdOn": "2019-05-04T09:05:00.000Z",
+    "modifiedOn": null
+  },
+  {
+    "id": 18568,
+    "time": {
+      "start": "2019-05-04T09:07:00.000Z",
+      "end": "2019-05-04T16:00:00.000Z"
+    },
+    "timeActual": {
+      "start": "2019-05-04T09:07:00.000Z",
+      "end": "2019-05-04T15:56:00.000Z"
+    },
+    "workedTimeInMinutes": 399,
+    "breaks": [
+      {
+        "time": {
+          "start": "2019-05-04T11:01:00.000Z",
+          "end": "2019-05-04T11:15:00.000Z"
+        },
+        "timeInMinutes": 14
+      }
+    ],
+    "breakTimeInMinutes": 14,
+    "employee": {
+      "id": 182,
+      "employeeNumber": "182",
+      "nationalInsuranceNumber": "00000000097"
+    },
+    "workspace": {
+      "name": "M HKA zaal",
+      "externalNumber": "MHKAZAAL"
+    },
+    "workArea": {
+      "name": "bediende host",
+      "externalId": 0,
+      "externalNumber": "WORKAREA.58"
+    },
+    "createdOn": "2019-05-04T09:07:00.000Z",
+    "modifiedOn": null
+  },
 ]
 ```
 
