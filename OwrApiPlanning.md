@@ -1,12 +1,12 @@
 ## Planning API
 
-Planning API is intended to be able to retrieve planning info from the Onlinewerkrooster.be application. 
+Planning API is intended to be able to retrieve or manipulate planning info from the Onlinewerkrooster.be application.
 
 ### Endpoint
 
 https://services.onlinewerkrooster.be/api/planning
 
-## GET /:id
+## GET /
 
 ### Use cases
 
@@ -33,6 +33,8 @@ https://services.onlinewerkrooster.be/api/planning
 ```
 https://owr-public-services-prod.herokuapp.com/api/planning?dateFrom=2018-01-01T00:00:00&dateTo=2018-08-31T23:59:59&confirmed=true
 ```
+
+### GET /:id
 
 Add the id to the end of the URL to retrieve the data for a single record.
 
@@ -91,8 +93,7 @@ curl --request GET \
     "employee": {
       "id": 84,
       "employeeNumber": "84",
-      "nationalInsuranceNumber": "00000000097"
-      "nationalInsuranceNumber": ""
+      "nationalInsuranceNumber": "00000000097"      
     },
     "workspace": {
       "name": "M HKAFE",
@@ -114,7 +115,76 @@ curl --request GET \
 ]
 ```
 
+## POST /workday
 
+### Use cases
+
+- Create a planning record
+
+### Example Request
+
+#### Header
+
+| Name   | Required | Value                            | Remarks                                                      |
+| ------ | -------- | -------------------------------- | ------------------------------------------------------------ |
+| Apikey | Yes      | 3fdae2c8b32348a3855af9f0377191d4 | Unique ID to identify the source to query data. (provided by onlinewerkrooster.be team) |
+
+#### Request body
+
+| Field name        | Type                 | Required       | Value                | Remarks                               |
+| ----------------- | -------------------- | -------------- | -------------------- | ------------------------------------- |
+| employeeNumber    | String               | Conditionally* | 101                  | Unique number to identify employee    |
+| employeeINSS      | String               | Conditionally* | 00000000097          | National insurance number of employee |
+| workArea          | String               | Yes            | KEUKEN               | Name of workarea                      |
+| workDayDates.from | Timestamp (ISO 8601) | Yes            | 2019-08-10T10:00:00Z | Start Date/Time of shift              |
+| workDayDates.to   | Timestamp (ISO 8601) | Yes            | 2019-08-10T17:00:00Z | End Date/Time of shift                |
+| break.from        | Timestamp (ISO 8601) | No             | 2019-10-08T12:00:00Z | Start Date/Time of break              |
+| break.to          | Timestamp (ISO 8601) | No             | 2019-10-08T12:15:00Z | End Date/Time of break                |
+
+> Either `employeeNumber`or `employeeINSS` is a required field to identify the employee.
+
+#### Example
+
+```json
+{
+	"employeeNumber": "123",
+	"employeeINSS":"00000000097",
+	"workArea": "KEUKEN",
+	"workDayDates": {
+		"from": "2019-08-10T10:00:00Z",
+		"to": "2019-08-10T17:00:00Z"
+	},
+	"break": {
+		"from": "2019-10-08T12:00:00Z",
+		"to": "2019-10-08T12:15:00Z"
+	}
+}
+```
+
+#### CURL
+
+```
+curl --request POST \
+  --url https://owr-public-services-prod.herokuapp.com/api/planning/workday \
+  --header 'apikey: 51703F12-56FC-4AF4-B911-DDADCA2BE6BE' \
+  --header 'content-type: application/json' \
+  --data '{
+	"employeeNumber": "123",	
+	"workArea": "KEUKEN",
+	"workDayDates": {
+		"from": "2019-08-10T10:00:00Z",
+		"to": "2019-08-10T17:00:00Z"
+	},
+	"break": {
+		"from": "2019-10-08T12:00:00Z",
+		"to": "2019-10-08T12:15:00Z"
+	}
+}'
+```
+
+### Example Response (Success)
+
+If workday is planned correctly, you will receive `201 - Created`
 
 ### Example Response (Error)
 
