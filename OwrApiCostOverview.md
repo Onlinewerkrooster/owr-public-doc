@@ -6,7 +6,7 @@ CostOverview API is intended to be able to retrieve cost overview info from the 
 
 ### Endpoint
 
-https://www.onlinewerkrooster.be/APIOWR/api/CostOverview/GetCostOverview?dateFrom=2018-03-01T12:00&dateTo=2018-03-01T23:00
+https://owr-public-services-prod.herokuapp.com/api/cost-overview?
 
 ### Use cases
 
@@ -16,11 +16,10 @@ https://www.onlinewerkrooster.be/APIOWR/api/CostOverview/GetCostOverview?dateFro
 
 #### Header
 
-| Name         | Required | Value                                | Remarks                                                      |
-| ------------ | -------- | ------------------------------------ | ------------------------------------------------------------ |
-| Apikey       | Yes      | 3fdae2c8b32348a3855af9f0377191d4     | Unique ID to identify the source to query data. (provided by onlinewerkrooster.be team) |
-| content-type | Yes      | application/json                     | JSON data                                                    |
-| UserId       | Yes      | 81ad2f9b-6362-4388-9617-96a18524850c | Unique ID to identify the requester. (provided by the onlinewerkrooster.be team) |
+| Name         | Required | Value                            | Remarks                                                      |
+| ------------ | -------- | -------------------------------- | ------------------------------------------------------------ |
+| Apikey       | Yes      | 3fdae2c8b32348a3855af9f0377191d4 | Unique ID to identify the source to query data. (provided by onlinewerkrooster.be team) |
+| content-type | Yes      | application/json                 | JSON data                                                    |
 
 #### URL Parameters
 
@@ -28,9 +27,13 @@ https://www.onlinewerkrooster.be/APIOWR/api/CostOverview/GetCostOverview?dateFro
 | ---------- | -------------------- | -------- | ---------------------- | ------------------------- |
 | dateFrom   | Timestamp (ISO 8601) | Yes      | 2018-03-15T13:46:50.52 | Start Date/Time of period |
 | dateTo     | Timestamp (ISO 8601) | Yes      | 2018-03-15T14:46:50.52 | End Date/Time of period   |
+| page       | number               | No       | 0                      |                           |
+| limit      | number               | No       | 10                     |                           |
+
+*Page & limit* are parameters which can be used to paginate the fetched data when a large set of data is expected.
 
 ```
-https://www.onlinewerkrooster.be/APIOWR/api/CostOverview/GetCostOverview?dateFrom=2018-03-01T12:00&dateTo=2018-03-01T23:00
+https://owr-public-services-prod.herokuapp.com/api/cost-overview?dateFrom=2019-09-01&dateTo=2019-09-30%2023%3A59%3A59%2B0200
 ```
 
 #### Body
@@ -40,76 +43,41 @@ N/A
 #### CURL
 ```
 curl --request GET \
-  --url 'https://www.onlinewerkrooster.be/APIOWR/api/CostOverview/GetCostOverview?dateTo=2018-03-01T23%3A00&dateFrom=2018-03-01T12%3A00' \
-  --header 'apikey: 4ecc0220-cad5-466b-be0b-5f4cd1ceb28d' \
-  --header 'content-type: application/json' \
-  --header 'userid: 5C848603-18B5-4EE8-AC3D-88F0E6FC1780'
+  --url 'https://owr-public-services-prod.herokuapp.com/api/cost-overview?dateFrom=2019-09-01&dateTo=2019-09-30%2023%3A59%3A59%2B0200' \
+  --header 'apikey: 5E23FA88-11E6-4427-8E8A-A664EEDAF8FD'
 ```
 
 ### Example Response (Success)
 
 ```
 [
-	{
-		"TransDatetime": "2018-03-01T12:00:00",
-		"HoursWorked": 3.0,
-		"CostAmount": 63.0
-	},
-	{
-		"TransDatetime": "2018-03-01T13:00:00",
-		"HoursWorked": 3.0,
-		"CostAmount": 63.0
-	},
-	{
-		"TransDatetime": "2018-03-01T14:00:00",
-		"HoursWorked": 1.25,
-		"CostAmount": 26.25
-	},
-	{
-		"TransDatetime": "2018-03-01T15:00:00",
-		"HoursWorked": 0.0,
-		"CostAmount": 0.0
-	},
-	{
-		"TransDatetime": "2018-03-01T16:00:00",
-		"HoursWorked": 0.0,
-		"CostAmount": 0.0
-	},
-	{
-		"TransDatetime": "2018-03-01T17:00:00",
-		"HoursWorked": 1.5,
-		"CostAmount": 31.5
-	},
-	{
-		"TransDatetime": "2018-03-01T18:00:00",
-		"HoursWorked": 4.0,
-		"CostAmount": 84.0
-	},
-	{
-		"TransDatetime": "2018-03-01T19:00:00",
-		"HoursWorked": 4.0,
-		"CostAmount": 84.0
-	},
-	{
-		"TransDatetime": "2018-03-01T20:00:00",
-		"HoursWorked": 4.0,
-		"CostAmount": 84.0
-	},
-	{
-		"TransDatetime": "2018-03-01T21:00:00",
-		"HoursWorked": 3.0,
-		"CostAmount": 63.0
-	},
-	{
-		"TransDatetime": "2018-03-01T22:00:00",
-		"HoursWorked": 1.25,
-		"CostAmount": 26.25
-	},
-	{
-		"TransDatetime": "2018-03-01T23:00:00",
-		"HoursWorked": 0.0,
-		"CostAmount": 0.0
-	}
+  {
+    "TransDatetime": "2019-09-14T22:00:00.000Z",
+    "HoursWorked": 1,
+    "CostAmount": 10,
+    "Workspace": {
+      "name": "BRUSSEL",
+      "externalNumber": "BXL"
+    }
+  },
+  {
+    "TransDatetime": "2019-09-15T22:00:00.000Z",
+    "HoursWorked": 2,
+    "CostAmount": 60,
+    "Workspace": {
+      "name": "BRUSSEL",
+      "externalNumber": "BXL"
+    }
+  },
+  {
+    "TransDatetime": "2019-09-16T22:00:00.000Z",
+    "HoursWorked": 1,
+    "CostAmount": 15,
+    "Workspace": {
+      "name": "ANTWERPEN",
+      "externalNumber": "ANT"
+    }
+  }
 ]
 ```
 
@@ -121,13 +89,10 @@ It may happen something goes wrong while querying cost overview data due to vari
 
 In general, when you're sure you specified the correct values, you can always contact the onlinewerkrooster.be support (support@onlinewerkrooster.be)
 
-| Error code                  | Error Message                                                | Explanation                                     | Solution          |
-| --------------------------- | ------------------------------------------------------------ | ----------------------------------------------- | ----------------- |
-| 500 - Internal Server Error | Unauthorized: Invalid ApiKey/UserId!                         | The combination "ApiKey" & "UserId" is invalid. | Check the values. |
-| 400 - Bad Request           | Header ApiKey is required!          .                        | Required field.                                 | Check the values. |
-| 400 - Bad Request           | Header ApiKey is required!                                   | Required field.                                 | Check the values. |
-| 400 - Bad Request           | Incomplete request: DateFrom empty                           | Required field.                                 | Check the values. |
-| 400 - Bad Request           | Incomplete request: DateTo empty                             | Required field.                                 | Check the values. |
-| 400 - Bad Request           | An error occurred while executing the command definition. See the inner exception for details. |                                                 | Contact Support   |
+| Error code                  | Error Message                    | Explanation                                                  | Solution          |
+| --------------------------- | -------------------------------- | ------------------------------------------------------------ | ----------------- |
+| 401 - Unauthorized          | Unauthorized.                    | An invalid apikey is used.                                   | Check the values. |
+| 400 - Bad Request           | Bad request                      | At least one of the query parameters is from a wrong type, or a required parameter is missing. | Check the values. |
+| 500 - Internal Server Error | An unexpected error has occured. |                                                              | Contact Support   |
 
 [back to overview](OnlineWerkroosterAPI.md)
