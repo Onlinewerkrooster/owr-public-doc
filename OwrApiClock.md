@@ -1,6 +1,6 @@
 ## Clock API
 
-Employee API is intended to be able to retrieve planning info from the Onlinewerkrooster.be application. 
+Clock API is intended to be able to retrieve time clock info from the Onlinewerkrooster application. 
 
 ### Endpoint
 
