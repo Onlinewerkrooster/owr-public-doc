@@ -34,11 +34,11 @@ https://www.onlinewerkrooster.be/APIOWR/api/Revenue/Revenue
 | Reports      |                      |          |                          | group element                    |
 | --Turnover   |                      |          |                          | group element                    |
 | ---turnover  | Numeric              | Yes      |                          | Revenue amount (incl tax)        |
-| ---tax       | Numeric              | Yes      |                          | Tax amount (not implemented yet) |
+| ---tax       | Numeric              | Yes      |                          | Tax amount                       |
 | --Hourly     |                      |          |                          | group element                    |
 | ---time      | Timestamp (ISO 8601) | Yes      | 2018-04-09T08:23:10.742Z | Date/Time of the revenue object  |
 | ---turnover  | Numeric              | Yes      |                          | Revenue amount (incl tax)        |
-| ---tax       | Numeric              | Yes      |                          | Tax amount(not implemented yet)  |
+| ---tax       | Numeric              | Yes      |                          | Tax amount                       |
 
 #### CURL
 ```
