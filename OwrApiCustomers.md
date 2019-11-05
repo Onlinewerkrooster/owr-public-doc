@@ -45,7 +45,7 @@ https://owr-public-services-prod.herokuapp.com/api/customers
 | address.streetNumber | String  | No       |                      |                                                              |
 | address.city         | String  | Yes      |                      |                                                              |
 | address.postalCode   | String  | No       |                      |                                                              |
-| address.country      | String  | No       |                      |                                                              |
+| address.country      | String  | Yes      |                      |                                                              |
 
 #### CURL
 
