@@ -12,8 +12,10 @@ URL: **.../api/clock/registered**
 
 ### Use cases
 
-- Retrieve an overview of the registered clock times within a date period.
-- Retrieve a single clock time record
+- Start working - clockin
+- Start break - breakIn
+- End break - breakOut
+- End working - clockOut
 
 ### Example Request
 
