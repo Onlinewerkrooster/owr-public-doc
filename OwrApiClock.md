@@ -126,7 +126,67 @@ curl --request GET \
 ]
 ```
 
+## POST /
 
+### Use cases
+
+- Retrieve an overview of the registered clock times within a date period.
+- Retrieve a single clock time record
+
+### Example Request
+
+#### Header
+
+| Name   | Required | Value                            | Remarks                                                      |
+| ------ | -------- | -------------------------------- | ------------------------------------------------------------ |
+| Apikey | Yes      | 3fdae2c8b32348a3855af9f0377191d4 | Unique ID to identify the source to query data. (provided by onlinewerkrooster.be team) |
+| content-type | Yes      | application/json | JSON data |
+
+#### Request body
+
+| Field name              | Type                 | Required | Value                                            | Remarks                                 |
+| ----------------------- | -------------------- | -------- | ------------------------------------------------ | --------------------------------------- |
+| nationalInsuranceNumber | String               | Yes      | 87082020907                                      | National insurance number               |
+| timestamp               | Timestamp (ISO 8601) | Yes      | 2018-03-15T14:46:50.52                           | Date/Time of clocking                   |
+| type                    | String               | Yes      | ClockIn<br />BreakIn<br />BreakOut<br />ClockOut | Action to indicate what has to be done. |
+
+#### Body
+
+```
+{
+	"nationalInsuranceNumber": "87082020907",
+	"timestamp": "2019-06-03T16:35:40+0200",
+	"type": "clockOut"
+}
+```
+
+#### CURL
+
+```
+curl --request POST \
+  --url https://owr-public-services-prod.herokuapp.com/api/clock/ \
+  --header 'apikey: 48E9970E-641C-83A8-DE77-C0FB70ADB6C4' \
+  --header 'content-type: application/json' \
+  --data '{
+	"nationalInsuranceNumber": "87082020907",
+	"timestamp": "2019-06-03T16:35:40+0200",
+	"type": "clockIn"
+}'
+```
+
+### Example Response (Success)
+
+```json
+{
+  "id": 1,
+  "validTo": "2020-01-15T12:04:00.000Z",
+  "ssn": "87082020807",
+  "pin": "1234",
+  "timeStamp": "2020-01-15T11:34:00.000Z",
+  "action": 0,
+  "message": "John Doe, je bent succesvol ingeklokt omstreeks 15/01/20 12:34 (12:34)"
+}
+```
 
 ### Example Response (Error)
 
@@ -139,6 +199,7 @@ In general, when you're sure you specified the correct values, you can always co
 | 404 - Not found             | No data found while data was expected.           | URL parameters do not match with data.           | Check the values. |
 | 400 - Bad Request           | Invalid request due to wrong/missing parameters. | Invalid request due to wrong/missing parameters. | Check the values. |
 | 401 - Bad Request           | Not authorized.                                  | Invalid ApiKey                                   | Check the values. |
+| 409 - Conflict error        | Short code of what's conflicting.                | Message to indicate what's wrong                 | Check the values. |
 | 500 - Internal Server Error | An unexpected (technical) error occurred.        |                                                  | Contact Support   |
 
 [back to overview](README.md)
