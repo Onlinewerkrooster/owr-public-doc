@@ -1,6 +1,6 @@
 ## Revenue API
 
-The Revenue API is intended to push revenue data from a cash register to the Onlinewerkrooster.be application. 
+The Revenue API is to query from or send revenue related data to the Onlinewerkrooster.be application. 
 
 ### Endpoint
 

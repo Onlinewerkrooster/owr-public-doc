@@ -23,6 +23,8 @@ The API itself is public accessible for everyone, but to make sure the data is p
   - [Clock](OwrApiClock.md)
 - Revenue
   - [BCMaticRevenue](OwrApiBCMaticRevenue.md)
+  - [Revenue](OwrAPIRevenue.md)
+  - [Revenue V2](OwrApiRevenueV2.md)
 - Cost Overview
 
   - [Cost Overview](OwrApiCostOverview.md)
