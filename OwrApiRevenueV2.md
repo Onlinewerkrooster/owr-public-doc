@@ -198,7 +198,7 @@ curl --request POST \
 ### Example Response (Success)
 
 ```json
-[
+{
   "revenue": {
       "planned": {
         "net": 1000,
@@ -267,7 +267,7 @@ curl --request POST \
     },
     "remarks": "a"
   }
-]
+  }
 ```
 
 ### Example Response (Success)
