@@ -115,7 +115,283 @@ curl --request GET \
 ]
 ```
 
-## POST /workday
+## GET /report
+
+### Use cases
+
+- Retrieve a *hourly/half hour/quarterly* report for a planning period where the amount of people **requested vs actual** is displayed
+  - Per workarea
+  - Or summarized
+
+### Example Request
+
+#### Header
+
+| Name   | Required | Value                            | Remarks                                                      |
+| ------ | -------- | -------------------------------- | ------------------------------------------------------------ |
+| Apikey | Yes      | 3fdae2c8b32348a3855af9f0377191d4 | Unique ID to identify the source to query data. (provided by onlinewerkrooster.be team) |
+
+#### URL Parameters
+
+| Field name        | Type                 | Required | Value                  | Remarks                                                      |
+| ----------------- | -------------------- | -------- | ---------------------- | ------------------------------------------------------------ |
+| from*             | Timestamp (ISO 8601) | Yes      | 2018-03-15T13:46:50.52 | Start Date/Time of period                                    |
+| to*               | Timestamp (ISO 8601) | Yes      | 2018-03-15T14:46:50.52 | End Date/Time of period                                      |
+| durationInMinutes | number               | Yes      | 15/30/60               | Amount of minutes for a shift                                |
+| summarize         | Boolean              | No       | true                   | If set to true, totals are calculated over all workareas. If set to false, totals are grouped per workarea. |
+
+> Please note you're not allowed to query data for a period longer than 7d for performance reasons.
+```
+https://owr-public-services-dev.herokuapp.com/api/planning/report/?from=2020-02-03&to=2020-02-03T23%3A59%3A59&durationInMinutes=60
+```
+#### CURL
+```
+curl --request GET \
+  --url 'https://owr-public-services-prod.herokuapp.com/api/planning/report/?from=2020-02-03&to=2020-02-03T23%3A59%3A59&durationInMinutes=60' \
+  --header 'apikey: BFFB23A4-65ED-4036-9B23-C34EDA8686B8'
+```
+
+### Example Response - summarized (Success)
+
+```json
+[
+  {
+    "businessDate": "2020-02-03T23:00:00.000Z",
+    "effectiveDatetime": "2020-02-03T23:00:00.000Z",
+    "startDatetime": "2020-02-03T23:00:00.000Z",
+    "endDatetime": "2020-02-03T23:59:00.000Z",
+    "amount": {
+      "requested": 0,
+      "actual": 0
+    }
+  },
+  {
+    "businessDate": "2020-02-03T23:00:00.000Z",
+    "effectiveDatetime": "2020-02-04T00:00:00.000Z",
+    "startDatetime": "2020-02-04T00:00:00.000Z",
+    "endDatetime": "2020-02-04T00:59:00.000Z",
+    "amount": {
+      "requested": 0,
+      "actual": 0
+    }
+  }
+    
+```
+
+### Example Response - not summarized (Success)
+
+```json
+[
+  {
+    "businessDate": "2020-02-03T23:00:00.000Z",
+    "effectiveDatetime": "2020-02-03T23:00:00.000Z",
+    "startDatetime": "2020-02-03T23:00:00.000Z",
+    "endDatetime": "2020-02-03T23:59:00.000Z",
+    "amount": {
+      "requested": 0,
+      "actual": 0
+    },
+    "workarea": {
+      "name": "Keuken",
+      "externalId": 101,
+      "externalNumber": "101",
+    }
+  },
+  {
+    "businessDate": "2020-02-03T23:00:00.000Z",
+    "effectiveDatetime": "2020-02-03T23:00:00.000Z",
+    "startDatetime": "2020-02-03T23:00:00.000Z",
+    "endDatetime": "2020-02-03T23:59:00.000Z",
+    "amount": {
+      "requested": 0,
+      "actual": 0
+    },
+    "workarea": {
+      "name": "Counter",
+      "externalId": 104,
+      "externalNumber": "104"
+    }
+  }
+]
+```
+
+## GET /report/actual
+
+### Use cases
+
+- Retrieve a *hourly/half hour/quarterly* report for a planning period where the **actual amount of people planned** is displayed
+  - Per workarea
+  - Or summarized
+
+### Example Request
+
+#### Header
+
+| Name   | Required | Value                            | Remarks                                                      |
+| ------ | -------- | -------------------------------- | ------------------------------------------------------------ |
+| Apikey | Yes      | 3fdae2c8b32348a3855af9f0377191d4 | Unique ID to identify the source to query data. (provided by onlinewerkrooster.be team) |
+
+#### URL Parameters
+
+| Field name        | Type                 | Required | Value                  | Remarks                                                      |
+| ----------------- | -------------------- | -------- | ---------------------- | ------------------------------------------------------------ |
+| from*             | Timestamp (ISO 8601) | Yes      | 2018-03-15T13:46:50.52 | Start Date/Time of period                                    |
+| to*               | Timestamp (ISO 8601) | Yes      | 2018-03-15T14:46:50.52 | End Date/Time of period                                      |
+| durationInMinutes | number               | Yes      | 15/30/60               | Amount of minutes for a shift                                |
+| summarize         | Boolean              | No       | true                   | If set to true, totals are calculated over all workareas. If set to false, totals are grouped per workarea. |
+
+> Please note you're not allowed to query data for a period longer than 7d for performance reasons.
+```
+https://owr-public-services-dev.herokuapp.com/api/planning/report/actual?from=2020-02-03&to=2020-02-03T23%3A59%3A59&durationInMinutes=60
+```
+#### CURL
+```
+curl --request GET \
+  --url 'https://owr-public-services-prod.herokuapp.com/api/planning/report/actual?from=2020-02-03&to=2020-02-03T23%3A59%3A59&durationInMinutes=60' \
+  --header 'apikey: BFFB23A4-65ED-4036-9B23-C34EDA8686B8'
+```
+
+### Example Response - summarized (Success)
+
+```json
+[
+  {
+    "businessDate": "2020-02-03T23:00:00.000Z",
+    "effectiveDatetime": "2020-02-03T23:00:00.000Z",
+    "startDatetime": "2020-02-03T23:00:00.000Z",
+    "endDatetime": "2020-02-03T23:59:00.000Z",
+    "amount": 0
+  },
+  {
+    "businessDate": "2020-02-03T23:00:00.000Z",
+    "effectiveDatetime": "2020-02-04T00:00:00.000Z",
+    "startDatetime": "2020-02-04T00:00:00.000Z",
+    "endDatetime": "2020-02-04T00:59:00.000Z",
+    "amount": 0
+  }
+    
+```
+
+### Example Response - not summarized (Success)
+
+```json
+[
+  {
+    "businessDate": "2020-02-03T23:00:00.000Z",
+    "effectiveDatetime": "2020-02-03T23:00:00.000Z",
+    "startDatetime": "2020-02-03T23:00:00.000Z",
+    "endDatetime": "2020-02-03T23:59:00.000Z",
+    "amount": 0
+    "workarea": {
+      "name": "Keuken",
+      "externalId": 101,
+      "externalNumber": "101",
+    }
+  },
+  {
+    "businessDate": "2020-02-03T23:00:00.000Z",
+    "effectiveDatetime": "2020-02-03T23:00:00.000Z",
+    "startDatetime": "2020-02-03T23:00:00.000Z",
+    "endDatetime": "2020-02-03T23:59:00.000Z",
+    "amount": 0
+    "workarea": {
+      "name": "Counter",
+      "externalId": 104,
+      "externalNumber": "104"
+    }
+  }
+]
+```
+
+## GET /report/requested
+
+### Use cases
+
+- Retrieve a *hourly/half hour/quarterly* report for a planning period where the **requested amount of people** is displayed
+  - Per workarea
+  - Or summarized
+
+### Example Request
+
+#### Header
+
+| Name   | Required | Value                            | Remarks                                                      |
+| ------ | -------- | -------------------------------- | ------------------------------------------------------------ |
+| Apikey | Yes      | 3fdae2c8b32348a3855af9f0377191d4 | Unique ID to identify the source to query data. (provided by onlinewerkrooster.be team) |
+
+#### URL Parameters
+
+| Field name        | Type                 | Required | Value                  | Remarks                                                      |
+| ----------------- | -------------------- | -------- | ---------------------- | ------------------------------------------------------------ |
+| from*             | Timestamp (ISO 8601) | Yes      | 2018-03-15T13:46:50.52 | Start Date/Time of period                                    |
+| to*               | Timestamp (ISO 8601) | Yes      | 2018-03-15T14:46:50.52 | End Date/Time of period                                      |
+| durationInMinutes | number               | Yes      | 15/30/60               | Amount of minutes for a shift                                |
+| summarize         | Boolean              | No       | true                   | If set to true, totals are calculated over all workareas. If set to false, totals are grouped per workarea. |
+
+> Please note you're not allowed to query data for a period longer than 7d for performance reasons.
+```
+https://owr-public-services-dev.herokuapp.com/api/planning/report/requested?from=2020-02-03&to=2020-02-03T23%3A59%3A59&durationInMinutes=60
+```
+#### CURL
+```
+curl --request GET \
+  --url 'https://owr-public-services-prod.herokuapp.com/api/planning/report/requested?from=2020-02-03&to=2020-02-03T23%3A59%3A59&durationInMinutes=60' \
+  --header 'apikey: BFFB23A4-65ED-4036-9B23-C34EDA8686B8'
+```
+
+### Example Response - summarized (Success)
+
+```json
+[
+  {
+    "businessDate": "2020-02-03T23:00:00.000Z",
+    "effectiveDatetime": "2020-02-03T23:00:00.000Z",
+    "startDatetime": "2020-02-03T23:00:00.000Z",
+    "endDatetime": "2020-02-03T23:59:00.000Z",
+    "amount": 0
+  },
+  {
+    "businessDate": "2020-02-03T23:00:00.000Z",
+    "effectiveDatetime": "2020-02-04T00:00:00.000Z",
+    "startDatetime": "2020-02-04T00:00:00.000Z",
+    "endDatetime": "2020-02-04T00:59:00.000Z",
+    "amount": 0
+  }
+    
+```
+
+### Example Response - not summarized (Success)
+
+```json
+[
+  {
+    "businessDate": "2020-02-03T23:00:00.000Z",
+    "effectiveDatetime": "2020-02-03T23:00:00.000Z",
+    "startDatetime": "2020-02-03T23:00:00.000Z",
+    "endDatetime": "2020-02-03T23:59:00.000Z",
+    "amount": 0
+    "workarea": {
+      "name": "Keuken",
+      "externalId": 101,
+      "externalNumber": "101",
+    }
+  },
+  {
+    "businessDate": "2020-02-03T23:00:00.000Z",
+    "effectiveDatetime": "2020-02-03T23:00:00.000Z",
+    "startDatetime": "2020-02-03T23:00:00.000Z",
+    "endDatetime": "2020-02-03T23:59:00.000Z",
+    "amount": 0
+    "workarea": {
+      "name": "Counter",
+      "externalId": 104,
+      "externalNumber": "104"
+    }
+  }
+]
+```
+
+### POST /workday
 
 ### Use cases
 
@@ -194,6 +470,7 @@ In general, when you're sure you specified the correct values, you can always co
 
 | Error code                  | Error Message                                    | Explanation                                      | Solution          |
 | --------------------------- | ------------------------------------------------ | ------------------------------------------------ | ----------------- |
+| 409 - Conflict              | Error code.                                      | Functional error.                                | Check the values. |
 | 404 - Not found             | No data found while data was expected.           | URL parameters do not match with data.           | Check the values. |
 | 400 - Bad Request           | Invalid request due to wrong/missing parameters. | Invalid request due to wrong/missing parameters. | Check the values. |
 | 401 - Bad Request           | Not authorized.                                  | Invalid ApiKey                                   | Check the values. |
