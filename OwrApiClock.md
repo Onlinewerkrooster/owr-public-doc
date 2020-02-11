@@ -1,6 +1,6 @@
 ## Clock API
 
-Clock API is intended to be able to retrieve time clock info from the Onlinewerkrooster application. 
+Clock API is intended to be able to retrieve or manipulate time clock info from the Onlinewerkrooster application. 
 
 ### Endpoint
 
