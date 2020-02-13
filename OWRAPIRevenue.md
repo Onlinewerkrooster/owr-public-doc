@@ -8,7 +8,7 @@ https://www.onlinewerkrooster.be/APIOWR/api/Revenue/Revenue
 
 ### Use cases
 
-- Push revenue data 
+- Push hourly revenue data 
 
 ### Example Request
 
