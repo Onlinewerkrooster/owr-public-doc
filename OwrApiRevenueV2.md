@@ -10,7 +10,7 @@ https://services.onlinewerkrooster.be/api/revenue
 
 ### Use cases
 
-- Import daily revenue data into OWR
+- Import **daily** revenue data into OWR
   - If data already exists in OWR, it will be overwritten. API can be used for both creation as update.
 
 ### Example Request
@@ -269,6 +269,130 @@ curl --request POST \
   }
   }
 ```
+
+## POST /hourly
+
+### Use cases
+
+- Import **hourly** revenue data into OWR
+  - If data already exists in OWR, it will be overwritten. API can be used for both creation as update.
+
+### Example Request
+
+#### Header
+
+| Name   | Required | Value                            | Remarks                                                      |
+| ------ | -------- | -------------------------------- | ------------------------------------------------------------ |
+| Apikey | Yes      | 3fdae2c8b32348a3855af9f0377191d4 | Unique ID to identify the source to query data. (provided by onlinewerkrooster.be team) |
+
+#### Body
+
+```json
+{
+	"businessDate": "2020-02-20T00:00:00+0100",
+	"workspace": {
+		"id": 1,
+		"externalNumber": "ANT"
+	},
+	"total": {
+		"gross": 242,
+		"net": 200,
+		"tax": 42
+	},
+	"hourly": [
+		{
+			"time": "2020-02-20T00:00:00+0100",
+			"amount": {
+				"gross": 181.5,
+				"net": 150,
+				"tax": 31.5
+			}
+		},
+		{
+			"time": "2020-02-20T01:00:00+0100",
+			"amount": {
+				"net": 50,
+				"tax": 10.5
+			}
+		}
+	]
+}
+```
+**Amount**
+
+>  The amount can be defined in either net, and/or gross. Only 2 of the 3 values (net, tax, gross) are required since the 3rd value will be calculated.
+
+```
+{
+ "net": 1000,
+ "tax": 210,
+ "gross": 1210
+}
+```
+
+**Workspace**
+
+The revenue data is linked to the OWR workspace, when data gets imported a reference to the OWR should be passed. There are 2 options:
+
+- id: unique ID in OWR
+- externalNumber: unique reference to identify the workspace (aligned between OWR & 3rd party system)
+
+**Field descriptions**
+
+| Field name                        | Type   | Required | Value      | Remarks                         |
+| --------------------------------- | ------ | -------- | ---------- | ------------------------------- |
+| businessDate             | Date     | Yes                    | 2020-02-06 | Date related to the revenue                                  |
+| workspace.id             | Number   | Conditionally required | 1          | Unique ID in OWR to identify a workspace.                    |
+| workspace.externalNumber | String   | Conditionally required | ANT        | Unique reference to identify the workspace. (kostenplaats in OWR) |
+| total                    | Amount(see above) | Required               |            | Total amount of all hourly records. (Used as checksum)       |
+| hourly[]                 | Array    |                        |            |                                                              |
+| hourly[n].time           | Datetime |                        | 2020-02-20T02:00:00+0100 | Start of hourly revenue. |
+| hourly[n].amount | Amount(see above) | |  | Amount related to the hour. |
+
+#### CURL
+
+```
+curl --request POST \
+  --url https://owr-public-services-prod.herokuapp.com/api/revenue/hourly \
+  --header 'apikey: 83FB9BCD-147A-4DE6-8317-DAC6B4194564' \
+  --header 'content-type: application/json' \
+  --data '{
+	"businessDate": "2020-02-20T00:00:00+0100",
+	"workspace": {
+		"id": 1,
+		"externalNumber": "ANT"
+	},
+	"total": {
+		"gross": 242,
+		"net": 200,
+		"tax": 42
+	},
+	"hourly": [
+		{
+			"time": "2020-02-20T00:00:00+0100",
+			"amount": {
+				"gross": 181.5,
+				"net": 150,
+				"tax": 31.5
+			}
+		},
+		{
+			"time": "2020-02-20T01:00:00+0100",
+			"amount": {
+				"net": 50,
+				"tax": 10.5
+			}
+		}
+	]
+}'
+```
+
+### Example Response (Success)
+
+```json
+204 - No Content
+```
+
 
 ### Example Response (Success)
 
