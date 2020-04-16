@@ -4,7 +4,7 @@ Clock API is intended to be able to retrieve or manipulate time clock info from 
 
 ### Endpoint
 
-https://owr-public-services-prod.herokuapp.com/api/clock/
+https://services.onlinewerkrooster.be/api/clock/
 
 ## GET /registered/:id
 
@@ -34,12 +34,12 @@ URL: **.../api/clock/registered**
 | dateTo     | Timestamp (ISO 8601) | Yes      | 2018-03-15T14:46:50.52 | End Date/Time of period   |
 
 ```
-https://owr-public-services-prod.herokuapp.com/api/clock/registered?dateFrom=2018-08-01T00:00:00&dateTo=2018-08-31T23:59:59
+https://services.onlinewerkrooster.be/api/clock/registered?dateFrom=2018-08-01T00:00:00&dateTo=2018-08-31T23:59:59
 ```
 
 Add the id to the end of the URL to retrieve the data for a single record.
 
-**https://owr-public-services-prod.herokuapp.com/api/clock/registered/1** would retrieve the planning data for timeClockData ID **1**
+**https://services.onlinewerkrooster.be/api/clock/registered/1** would retrieve the planning data for timeClockData ID **1**
 
 #### Body
 
@@ -48,7 +48,7 @@ N/A
 #### CURL
 ```
 curl --request GET \
-  --url 'https://owr-public-services-prod.herokuapp.com/api/clock/registered?dateTo=2018-08-31T23%3A59%3A59&dateFrom=2018-08-01T00%3A00%3A00' \
+  --url 'https://services.onlinewerkrooster.be/api/clock/registered?dateTo=2018-08-31T23%3A59%3A59&dateFrom=2018-08-01T00%3A00%3A00' \
   --header 'apikey: 8689DB67-D12C-46A5-B4F9-74E70D1B37CF' \
   --header 'content-type: application/json'
 ```
@@ -166,7 +166,7 @@ curl --request GET \
 
 ```
 curl --request POST \
-  --url https://owr-public-services-prod.herokuapp.com/api/clock/ \
+  --url https://services.onlinewerkrooster.be/api/clock/ \
   --header 'apikey: 48E9970E-641C-83A8-DE77-C0FB70ADB6C4' \
   --header 'content-type: application/json' \
   --data '{

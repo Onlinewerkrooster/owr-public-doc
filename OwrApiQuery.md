@@ -14,7 +14,7 @@ If needed, you can contact onlinewerkrooster support (support@onlinewerkrooster.
 
 ## Endpoint
 
-https://owr-public-services-prod.herokuapp.com/api/query/
+https://services.onlinewerkrooster.be/api/query/
 
 ## GET /api/query/entities/meta
 
@@ -37,7 +37,7 @@ GET API to retrieve which entities are queryable and returns detailed informatio
 
 ```
 curl --request GET \
-  --url 'https://owr-public-services-prod.herokuapp.com/api/query/entities/meta?entities=employee&entities=planning' \
+  --url 'https://services.onlinewerkrooster.be/api/query/entities/meta?entities=employee&entities=planning' \
   --header 'apikey: 927073B6-3D9E-A2AA-98FA-83573D2CC57E'
 ```
 
@@ -164,7 +164,7 @@ curl --request GET \
 
 ```
 curl --request GET \
-  --url https://owr-public-services-prod.herokuapp.com/api/query/entities \
+  --url https://services.onlinewerkrooster.be/api/query/entities \
   --header 'apikey: 3CCD0823-F532-4219-8A10-A660992070B7' \
   --header 'content-type: application/json' \
   --data '{
@@ -255,7 +255,7 @@ GET API to retrieve which reports are queryable and returns detailed information
 
 ```
 curl --request GET \
-  --url 'https://owr-public-services-prod.herokuapp.com/api/query/reports/meta?reports=CUMULIO_EMPLOYEES&entities=CUMULIO_PLANNING' \
+  --url 'https://services.onlinewerkrooster.be/api/query/reports/meta?reports=CUMULIO_EMPLOYEES&entities=CUMULIO_PLANNING' \
   --header 'apikey: 927073B6-3D9E-A2AA-98FA-83573D2CC57E'
 ```
 
@@ -366,7 +366,7 @@ curl --request GET \
 
 ```
 curl --request GET \
-  --url https://owr-public-services-prod.herokuapp.com/api/query/reports \
+  --url https://services.onlinewerkrooster.be/api/query/reports \
   --header 'apikey: 3CCD0823-F532-4219-8A10-A660992070B7' \
   --header 'content-type: application/json' \
   --data '{

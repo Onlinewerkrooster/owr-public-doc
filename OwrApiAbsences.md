@@ -42,7 +42,7 @@ N/A
 
 ```
 curl --request GET \
-  --url 'https://owr-public-services-prod.herokuapp.com/api/absences?dateFrom=2019-01-07T22%3A00%3A00Z&dateTo=2019-09-30T22%3A00%3A00Z&status=APPROVED&holidayTypeExportPayroll=true' \
+  --url 'https://services.onlinewerkrooster.be/api/absences?dateFrom=2019-01-07T22%3A00%3A00Z&dateTo=2019-09-30T22%3A00%3A00Z&status=APPROVED&holidayTypeExportPayroll=true' \
   --header 'apikey: 51703F12-56FC-4AF4-B911-DDADCA2BE6BE' \
   --header 'content-type: application/json'
 ```

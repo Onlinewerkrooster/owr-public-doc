@@ -126,7 +126,7 @@ https://services.onlinewerkrooster.be/api/revenue
 
 ```
 curl --request POST \
-  --url https://owr-public-services-prod.herokuapp.com/api/revenue/daily \
+  --url https://services.onlinewerkrooster.be/api/revenue/daily \
   --header 'apikey: BFFB23A4-65ED-4036-9B23-C34EDA8686B0' \
   --header 'content-type: application/json' \
   --data '{
@@ -353,7 +353,7 @@ The revenue data is linked to the OWR workspace, when data gets imported a refer
 
 ```
 curl --request POST \
-  --url https://owr-public-services-prod.herokuapp.com/api/revenue/hourly \
+  --url https://services.onlinewerkrooster.be/api/revenue/hourly \
   --header 'apikey: 83FB9BCD-147A-4DE6-8317-DAC6B4194564' \
   --header 'content-type: application/json' \
   --data '{

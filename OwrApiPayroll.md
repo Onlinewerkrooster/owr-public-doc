@@ -6,7 +6,7 @@
 
 ### Endpoint
 
-https://owr-public-services-prod.herokuapp.com/api/payroll?
+https://services.onlinewerkrooster.be/api/payroll?
 
 ### Use cases
 
@@ -31,7 +31,7 @@ https://owr-public-services-prod.herokuapp.com/api/payroll?
 | inss           | String               | No       | 87.08.20 209-07        | National Identifier (INSZ) |
 
 ```
-https://owr-public-services-prod.herokuapp.com/api/payroll?dateFrom=2019-06-01T00%3A00%3A00&dateTo=2019-06-30T23%3A59%3A59
+https://services.onlinewerkrooster.be/api/payroll?dateFrom=2019-06-01T00%3A00%3A00&dateTo=2019-06-30T23%3A59%3A59
 ```
 
 #### Body
@@ -42,7 +42,7 @@ N/A
 
 ```
 curl --request GET \
-  --url 'https://owr-public-services-prod.herokuapp.com/api/payroll?dateFrom=2019-06-01T00%3A00%3A00&dateTo=2019-06-30T23%3A59%3A59' \
+  --url 'https://services.onlinewerkrooster.be/api/payroll?dateFrom=2019-06-01T00%3A00%3A00&dateTo=2019-06-30T23%3A59%3A59' \
   --header 'apikey: C2903CDE-D440-4327-B20B-41CF6820F3C9'
 ```
 

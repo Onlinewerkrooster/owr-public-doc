@@ -139,7 +139,8 @@ curl --request GET \
 | nationalInsuranceNumber | String          | No       | 000000000097    | INSS number (modulo 97 check)                           |
 | contractStartDate       | Date            | No       | 2019-01-01      | Contract start date                                     |
 | contractEndDate         | Date            | No       | 2020-12-31      | Contract end date                                       |
-| workspaces              | Array of string | Yes      | 'CZ'            | List of unique workspace identifiers (external numbers) |
+| workspaces[]            | Array of string | No       | 'CZ'            | List of unique workspace identifiers (external numbers) |
+| workareas[]             | Array of string | No       | 'CZ-Keuken'     | List of unique workarea identifiers (external numbers)  |
 
 ##### JSON
 
@@ -154,6 +155,10 @@ curl --request GET \
 	"contractEndDate": "2020-12-31",
 	"workspaces": [
 		"CZ"
+	],
+	"workareas": [
+		"CZ-Keuken",
+		"CZ-Zaal"
 	]
 }
 ```
@@ -162,8 +167,8 @@ curl --request GET \
 
 ```
 curl --request POST \
-  --url https://owr-public-services-dev.herokuapp.com/api/employees/ \
-  --header 'apikey: 51703F12-56FC-4AF4-B911-DDADCA2BE6BD' \
+  --url http://localhost:3003/api/employees/ \
+  --header 'apikey: 83FB9BCD-147A-4DE6-8317-DAC6B4194565' \
   --header 'content-type: application/json' \
   --data '{
 	"employeeNumber": "100001",
@@ -175,6 +180,10 @@ curl --request POST \
 	"contractEndDate": "2020-12-31",
 	"workspaces": [
 		"CZ"
+	],
+	"workareas": [
+		"CZ-Keuken",
+		"CZ-Zaal"
 	]
 }'
 ```
@@ -183,12 +192,13 @@ curl --request POST \
 
 ```json
 {
-  "employeeNumber": "100001",
-  "email": "john.doe@owr.be"
+  "employeeNumber": "OWR.0001.2",
+  "email": "test1124-2@owr.be",
+  "externalId": 0,
+  "externalNumber": "10002",
+  "pin": "3839"
 }
 ```
-
-## 
 
 ### Example Response (Error)
 

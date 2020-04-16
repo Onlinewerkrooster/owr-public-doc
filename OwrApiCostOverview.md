@@ -6,7 +6,7 @@ CostOverview API is intended to be able to retrieve cost overview info from the 
 
 ### Endpoint
 
-https://owr-public-services-prod.herokuapp.com/api/cost-overview?
+https://services.onlinewerkrooster.be/api/cost-overview?
 
 ### Use cases
 
@@ -33,7 +33,7 @@ https://owr-public-services-prod.herokuapp.com/api/cost-overview?
 *Page & limit* are parameters which can be used to paginate the fetched data when a large set of data is expected.
 
 ```
-https://owr-public-services-prod.herokuapp.com/api/cost-overview?dateFrom=2019-09-01&dateTo=2019-09-30%2023%3A59%3A59%2B0200
+https://services.onlinewerkrooster.be/api/cost-overview?dateFrom=2019-09-01&dateTo=2019-09-30%2023%3A59%3A59%2B0200
 ```
 
 #### Body
@@ -43,7 +43,7 @@ N/A
 #### CURL
 ```
 curl --request GET \
-  --url 'https://owr-public-services-prod.herokuapp.com/api/cost-overview?dateFrom=2019-09-01&dateTo=2019-09-30%2023%3A59%3A59%2B0200' \
+  --url 'https://services.onlinewerkrooster.be/api/cost-overview?dateFrom=2019-09-01&dateTo=2019-09-30%2023%3A59%3A59%2B0200' \
   --header 'apikey: 5E23FA88-11E6-4427-8E8A-A664EEDAF8FD'
 ```
 

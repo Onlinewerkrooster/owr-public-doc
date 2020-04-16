@@ -31,14 +31,14 @@ https://services.onlinewerkrooster.be/api/planning
 | rejected   | Boolean              | No       | false                  | Is planning rejected by employee?  |
 
 ```
-https://owr-public-services-prod.herokuapp.com/api/planning?dateFrom=2018-01-01T00:00:00&dateTo=2018-08-31T23:59:59&confirmed=true
+https://services.onlinewerkrooster.be/api/planning?dateFrom=2018-01-01T00:00:00&dateTo=2018-08-31T23:59:59&confirmed=true
 ```
 
 ### GET /:id
 
 Add the id to the end of the URL to retrieve the data for a single record.
 
-**https://owr-public-services-prod.herokuapp.com/api/planning/1** would retrieve the planning data for planning ID **1**
+**https://services.onlinewerkrooster.be/api/planning/1** would retrieve the planning data for planning ID **1**
 
 #### Body
 
@@ -47,7 +47,7 @@ N/A
 #### CURL
 ```
 curl --request GET \
-  --url 'https://owr-public-services-prod.herokuapp.com/api/planning?dateTo=2018-08-31T23%3A59%3A59&dateFrom=2018-08-01T00%3A00%3A00confirmed=true' \
+  --url 'https://services.onlinewerkrooster.be/api/planning?dateTo=2018-08-31T23%3A59%3A59&dateFrom=2018-08-01T00%3A00%3A00confirmed=true' \
   --header 'apikey: 8689DB67-D12C-46A5-B4F9-74E70D1B37CF' \
   --header 'content-type: application/json'
 ```
@@ -147,7 +147,7 @@ https://owr-public-services-dev.herokuapp.com/api/planning/report/?from=2020-02-
 #### CURL
 ```
 curl --request GET \
-  --url 'https://owr-public-services-prod.herokuapp.com/api/planning/report/?from=2020-02-03&to=2020-02-03T23%3A59%3A59&durationInMinutes=60' \
+  --url 'https://services.onlinewerkrooster.be/api/planning/report/?from=2020-02-03&to=2020-02-03T23%3A59%3A59&durationInMinutes=60' \
   --header 'apikey: BFFB23A4-65ED-4036-9B23-C34EDA8686B8'
 ```
 
@@ -247,7 +247,7 @@ https://owr-public-services-dev.herokuapp.com/api/planning/report/actual?from=20
 #### CURL
 ```
 curl --request GET \
-  --url 'https://owr-public-services-prod.herokuapp.com/api/planning/report/actual?from=2020-02-03&to=2020-02-03T23%3A59%3A59&durationInMinutes=60' \
+  --url 'https://services.onlinewerkrooster.be/api/planning/report/actual?from=2020-02-03&to=2020-02-03T23%3A59%3A59&durationInMinutes=60' \
   --header 'apikey: BFFB23A4-65ED-4036-9B23-C34EDA8686B8'
 ```
 
@@ -335,7 +335,7 @@ https://owr-public-services-dev.herokuapp.com/api/planning/report/requested?from
 #### CURL
 ```
 curl --request GET \
-  --url 'https://owr-public-services-prod.herokuapp.com/api/planning/report/requested?from=2020-02-03&to=2020-02-03T23%3A59%3A59&durationInMinutes=60' \
+  --url 'https://services.onlinewerkrooster.be/api/planning/report/requested?from=2020-02-03&to=2020-02-03T23%3A59%3A59&durationInMinutes=60' \
   --header 'apikey: BFFB23A4-65ED-4036-9B23-C34EDA8686B8'
 ```
 
@@ -441,7 +441,7 @@ curl --request GET \
 
 ```
 curl --request POST \
-  --url https://owr-public-services-prod.herokuapp.com/api/planning/workday \
+  --url https://services.onlinewerkrooster.be/api/planning/workday \
   --header 'apikey: 51703F12-56FC-4AF4-B911-DDADCA2BE6BE' \
   --header 'content-type: application/json' \
   --data '{

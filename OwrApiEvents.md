@@ -100,7 +100,7 @@ curl --request POST \
 | dateTo         | Timestamp (ISO 8601) | Conditionally* | 2018-03-15T14:46:50.52 | End Date/Time of period                           |
 
 ```
-https://owr-public-services-prod.herokuapp.com/api/events/timeclock/?extEventNumber=10001&dateTo=2018-10-14T23%3A59%3A59&dateFrom=2018-10-08
+https://services.onlinewerkrooster.be/api/events/timeclock/?extEventNumber=10001&dateTo=2018-10-14T23%3A59%3A59&dateFrom=2018-10-08
 ```
 
 #### Body
@@ -111,7 +111,7 @@ N/A
 
 ```
 curl --request GET \
-  --url 'https://owr-public-services-prod.herokuapp.com/api/events/timeclock/?extEventNumber=10001&dateTo=2018-10-14T23%3A59%3A59&dateFrom=2018-10-08' \
+  --url 'https://services.onlinewerkrooster.be/api/events/timeclock/?extEventNumber=10001&dateTo=2018-10-14T23%3A59%3A59&dateFrom=2018-10-08' \
   --header 'apikey: 4C6086B2-4201-4CD6-A94A-BB89684FD0BD'
 ```
 
@@ -195,7 +195,7 @@ curl --request GET \
 | dateTo         | Timestamp (ISO 8601) | Conditionally* | 2018-03-15T14:46:50.52 | End Date/Time of period                           |
 
 ```
-https://owr-public-services-prod.herokuapp.com/api/events/planning/?extEventNumber=10001&dateTo=2018-10-14T23%3A59%3A59&dateFrom=2018-10-08
+https://services.onlinewerkrooster.be/api/events/planning/?extEventNumber=10001&dateTo=2018-10-14T23%3A59%3A59&dateFrom=2018-10-08
 ```
 
 #### Body
@@ -206,7 +206,7 @@ N/A
 
 ```
 curl --request GET \
-  --url 'https://owr-public-services-prod.herokuapp.com/api/events/planning/?extEventNumber=10001&dateTo=2018-10-14T23%3A59%3A59&dateFrom=2018-10-08' \
+  --url 'https://services.onlinewerkrooster.be/api/events/planning/?extEventNumber=10001&dateTo=2018-10-14T23%3A59%3A59&dateFrom=2018-10-08' \
   --header 'apikey: 4C6086B2-4201-4CD6-A94A-BB89684FD0BD'
 ```
 

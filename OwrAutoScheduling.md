@@ -4,7 +4,7 @@ The AutoScheduling endpoint is intended to fetch auto scheduling from OWR, or cr
 
 ### Endpoint
 
-https://owr-public-services-prod.herokuapp.com/api/auto-scheduling/
+https://services.onlinewerkrooster.be/api/auto-scheduling/
 
 ### Use cases
 
@@ -95,7 +95,7 @@ This API is intended to create *resource needs* on a daily basis. The resource n
 
 ```
 curl --request POST \
-  --url https://owr-public-services-prod.herokuapp.com/api/auto-scheduling/resource-needs/daily \
+  --url https://services.onlinewerkrooster.be/api/auto-scheduling/resource-needs/daily \
   --header 'apikey: 0BDF3878-1A5D-4CEA-52D8-310C94A87440' \
   --header 'cache-control: no-cache' \
   --header 'content-type: application/json' \

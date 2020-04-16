@@ -4,7 +4,7 @@ Customers API is intended to be able to retrieve and create customer info from t
 
 ## Endpoint
 
-https://owr-public-services-prod.herokuapp.com/api/customers
+https://services.onlinewerkrooster.be/api/customers
 
 ## POST api/customers
 
