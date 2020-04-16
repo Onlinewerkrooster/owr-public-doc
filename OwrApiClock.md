@@ -132,8 +132,7 @@ curl --request GET \
 
 ### Use cases
 
-- Retrieve an overview of the registered clock times within a date period.
-- Retrieve a single clock time record
+- Perform a timeclock action for a user (Clock in, Clock out, Break in , Break out)
 
 ### Example Request
 
