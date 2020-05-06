@@ -31,7 +31,7 @@ https://services.onlinewerkrooster.be/api/absences
 | holidayTypeExportPayroll | Boolean              | No       | false                       | Absence applicable for payroll?              |
 
 ```
-https://owr-public-services-dev.herokuapp.com/api/absences?dateFrom=2019-01-07T22%3A00%3A00Z&dateTo=2019-09-30T22%3A00%3A00Z&status=APPROVED&holidayTypeExportPayroll=true
+https://services.onlinewerkrooster.be/api/absences?dateFrom=2019-01-07T22%3A00%3A00Z&dateTo=2019-09-30T22%3A00%3A00Z&status=APPROVED&holidayTypeExportPayroll=true
 ```
 
 #### Body
@@ -164,7 +164,7 @@ Either `dayPart`or `startTime + durationInMinutes` is required.
 
 ```
 curl --request POST \
-  --url https://owr-public-services-dev.herokuapp.com/api/absences/bulk \
+  --url https://services.onlinewerkrooster.be/api/absences/bulk \
   --header 'apikey: 51703F12-56FC-4AF4-B911-DDADCA2BE6BE' \
   --header 'content-type: application/json' \
   --data '{

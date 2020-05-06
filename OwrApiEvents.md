@@ -51,7 +51,7 @@ https://services.onlinewerkrooster.be/api/events
 
 ```
 curl --request POST \
-  --url https://owr-public-services-dev.herokuapp.com/api/events/ \
+  --url https://services.onlinewerkrooster.be/api/events/ \
   --header 'apikey: 4C6086B2-4201-4CD6-A94A-BB89684FD0BE' \
   --header 'content-type: application/json' \
   --data '{

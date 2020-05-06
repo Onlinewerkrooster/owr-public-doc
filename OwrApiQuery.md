@@ -101,7 +101,7 @@ A list of all queryable entities can be retrived with the 'meta' API
 
 ```
 curl --request GET \
-  --url 'https://owr-public-services-dev.herokuapp.com/api/query/entities/meta \
+  --url 'https://services.onlinewerkrooster.be/api/query/entities/meta \
   --header 'apikey: 927073B6-3D9E-A2AA-98FA-83573D2CC57E'
 ```
 
@@ -319,7 +319,7 @@ A list of all queryable reports can be retrived with the 'meta' API
 
 ```
 curl --request GET \
-  --url 'https://owr-public-services-dev.herokuapp.com/api/query/reports/meta \
+  --url 'https://services.onlinewerkrooster.be/api/query/reports/meta \
   --header 'apikey: 927073B6-3D9E-A2AA-98FA-83573D2CC57E'
 ```
 

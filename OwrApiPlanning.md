@@ -142,7 +142,7 @@ curl --request GET \
 
 > Please note you're not allowed to query data for a period longer than 7d for performance reasons.
 ```
-https://owr-public-services-dev.herokuapp.com/api/planning/report/?from=2020-02-03&to=2020-02-03T23%3A59%3A59&durationInMinutes=60
+https://services.onlinewerkrooster.be/api/planning/report/?from=2020-02-03&to=2020-02-03T23%3A59%3A59&durationInMinutes=60
 ```
 #### CURL
 ```
@@ -242,7 +242,7 @@ curl --request GET \
 
 > Please note you're not allowed to query data for a period longer than 7d for performance reasons.
 ```
-https://owr-public-services-dev.herokuapp.com/api/planning/report/actual?from=2020-02-03&to=2020-02-03T23%3A59%3A59&durationInMinutes=60
+https://services.onlinewerkrooster.be/api/planning/report/actual?from=2020-02-03&to=2020-02-03T23%3A59%3A59&durationInMinutes=60
 ```
 #### CURL
 ```
@@ -330,7 +330,7 @@ curl --request GET \
 
 > Please note you're not allowed to query data for a period longer than 7d for performance reasons.
 ```
-https://owr-public-services-dev.herokuapp.com/api/planning/report/requested?from=2020-02-03&to=2020-02-03T23%3A59%3A59&durationInMinutes=60
+https://services.onlinewerkrooster.be/api/planning/report/requested?from=2020-02-03&to=2020-02-03T23%3A59%3A59&durationInMinutes=60
 ```
 #### CURL
 ```
