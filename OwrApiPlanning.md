@@ -47,7 +47,7 @@ N/A
 #### CURL
 ```
 curl --request GET \
-  --url 'https://services.onlinewerkrooster.be/api/planning?dateTo=2018-08-31T23%3A59%3A59&dateFrom=2018-08-01T00%3A00%3A00confirmed=true' \
+  --url 'https://services.onlinewerkrooster.be/api/planning?dateTo=2018-08-31T23%3A59%3A59&dateFrom=2018-08-01T00%3A00%3A00&confirmed=true' \
   --header 'apikey: 8689DB67-D12C-46A5-B4F9-74E70D1B37CF' \
   --header 'content-type: application/json'
 ```
