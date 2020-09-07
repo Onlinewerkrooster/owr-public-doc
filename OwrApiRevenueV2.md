@@ -346,7 +346,7 @@ The revenue data is linked to the OWR workspace, when data gets imported a refer
 | workspace.externalNumber | String   | Conditionally required | ANT        | Unique reference to identify the workspace. (kostenplaats in OWR) |
 | total                    | Amount(see above) | Required               |            | Total amount of all hourly records. (Used as checksum)       |
 | hourly[]                 | Array    |                        |            |                                                              |
-| hourly[n].time           | Datetime |                        | 2020-02-20T02:00:00+0100 | Start of hourly revenue. |
+| hourly[n].time           | Datetime |                        | 2020-02-20T02:00:00+0100 | Start of hourly revenue. (in UTC) |
 | hourly[n].amount | Amount(see above) | |  | Amount related to the hour. |
 
 #### CURL
