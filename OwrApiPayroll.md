@@ -55,14 +55,18 @@ curl --request GET \
     "inss": "87082020907",
     "date": "2019-06-03",
     "amount": 8.25,
-    "wageCode": "1101"
+    "wageCode": "1101",
+    "workspaceId": "1",
+    "workspaceExternalNumber": "100"
   },
   {
     "employeeNumber": "4",
     "inss": "87082020907",
     "date": "2019-06-04",
     "amount": 10.066666666666666,
-    "wageCode": "1101"
+    "wageCode": "1101",
+    "workspaceId": "3",
+    "workspaceExternalNumber": "105"
   },
 ```
 
