@@ -62,6 +62,7 @@ curl --request GET \
       "start": "2019-07-08T06:00:00.000Z",
       "end": "2019-07-08T11:30:00.000Z"
     },
+    "breaktimeInMinutes": 30,
     "employee": {
       "id": 83,
       "employeeNumber": "83",
@@ -90,6 +91,7 @@ curl --request GET \
       "start": "2019-07-09T09:00:00.000Z",
       "end": "2019-07-09T16:00:00.000Z"
     },
+    "breaktimeInMinutes": 60,
     "employee": {
       "id": 84,
       "employeeNumber": "84",
