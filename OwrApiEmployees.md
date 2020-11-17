@@ -45,10 +45,14 @@ curl --request GET \
 [
   {
     "id": 1,
+    "employeeId": 1,
+    "employeeCompanyId": 1,
     "nationalInsuranceNumber": "",
     "employeeNumber": "",
     "firstName": "Scott",
     "lastName": "Tiger",
+    "email": "scott.tiger@strobbo.com",
+    "isActive": true,
     "address": "Akkerstraat 33",
     "city": "Dessel",
     "postalCode": "2480",
@@ -75,14 +79,21 @@ curl --request GET \
     "function": "Kelner",
     "costPerHour": 0,
     "wagePerHour": 1,
-    "hoursPerWeek": 40
+    "hoursPerWeek": 40,
+    "paygrade": "CAT1",
+    "kilometers": 10,
+    "transport": "BIKE"
   },
   {
     "id": 3,
+    "employeeId": 3,
+    "employeeCompanyId": 3,
     "nationalInsuranceNumber": "87082020907",
     "employeeNumber": "1088",
     "firstName": "John",
     "lastName": "Doe",
+    "email": "john.doe@strobbo.com",
+    "isActive": true,
     "address": "",
     "city": "",
     "postalCode": "",
@@ -109,7 +120,10 @@ curl --request GET \
     "function": "",
     "costPerHour": 0,
     "wagePerHour": 1,
-    "hoursPerWeek": 38
+    "hoursPerWeek": 38,
+    "paygrade": "CAT1",
+    "kilometers": 10,
+    "transport": "BIKE"
   }]
 ```
 
@@ -141,6 +155,8 @@ curl --request GET \
 | contractEndDate         | Date            | No       | 2020-12-31      | Contract end date                                       |
 | workspaces[]            | Array of string | No       | 'CZ'            | List of unique workspace identifiers (external numbers) |
 | workareas[]             | Array of string | No       | 'CZ-Keuken'     | List of unique workarea identifiers (external numbers)  |
+| externalId              | Number          | No       | 1               | **Unique** number is source application                 |
+| externalNumber          | String          | No       | '100000'        | **Unique** (alphanumeric) identifier in source application |
 
 ##### JSON
 
@@ -159,7 +175,9 @@ curl --request GET \
 	"workareas": [
 		"CZ-Keuken",
 		"CZ-Zaal"
-	]
+	],
+	"externalId": 1,
+	"externalNumber": "100001"
 }
 ```
 
