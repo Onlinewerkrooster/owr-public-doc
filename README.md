@@ -1,56 +1,27 @@
-# OnlineWerkrooster APIs
+# Strobbo integration APIs
 
-## General
+All APIs are built as a restful API which expect to receive data in JSON format accompanied with the correct Header information. Not only the data, but also the header information may differ between the different APIs! Please read the documentation carefully to make sure you are using the correct headers. If you have doubts or questions, you can contact the onlinewerkrooster.be support team (support@strobbo.com).
 
-All APIs are built as a restful API which expect to receive data in JSON format accompanied with the correct Header information. Not only the data, but also the header information may differ between the different APIs! Please read the documentation carefully to make sure you are using the correct headers. If you have doubts or questions, you can contact the onlinewerkrooster.be support team (support@onlinewerkrooster.be).
+You can use tools as Insomnia (https://insomnia.rest/) or Postman(https://www.getpostman.com/) in order to test the API, but it is also possible to test the endpoints via the swagger documentation available on https://services.strobbo.com/api/documentation.
 
-You can use tools as Insomnia (https://insomnia.rest/) or Postman(https://www.getpostman.com/) in order to test the API. Per API you can find a "Curl" text which can easily use to copy/paste in your test tool without  entering all the information yourself manually.
+## (Technical) Documentation
 
-![insomnia_newRequest](assets/insomnia_newRequest.png)
+All details about the available endpoints are documented on https://services.strobbo.com/api/documentation.
 
-![insomnia_pasteCurl](assets/insomnia_pasteCurl.png)
+![image-20210517115006636](../owr-general/assets/image-20210517115006636.png)
 
-## How to get access?
+## Deprecated APIs
 
-The API itself is public accessible for everyone, but to make sure the data is processed for the correct customer, the "requester" needs to identify himself by means of an API key. These key will be provided by the onlinewerkrooster.be team.  If you haven't received these key yet, please contact support@onlinewerkrooster.be to receive this information so you can start using the API.
+We still support some older versions of particular API to make sure existing integration still work. Please do **not** use these endpoints for **new** integrations.
 
-## API List
+| Domain            | Documentation Link                                | Remarks                                                      |
+| ----------------- | ------------------------------------------------- | ------------------------------------------------------------ |
+| Time registration | [ETC Timeclock API](OwrApiETCTimeclock.md)        | ETC Timeclock integration                                    |
+|                   | [ClockTime](OwrApiClockTime.md)                   | New version: https://services.strobbo.com/api/documentation/#/Time%20registration/post_clock |
+|                   | [ClockTimeSpecified](OwrApiClockTimeSpecified.md) | New version: https://services.strobbo.com/api/documentation/#/Time%20registration/post_clock |
+| Revenue           | [Revenue](OWRAPIRevenue.md)                       | New version: https://services.strobbo.com/api/documentation/#/Revenue |
 
-- Time Clock
-  - [ETC Timeclock API](OwrApiETCTimeclock.md)
-  - [ClockTime](OwrApiClockTime.md)
-  - [ClockTimeSpecified](OwrApiClockTimeSpecified.md)
-  - [Clock](OwrApiClock.md)
-- Revenue
-  - [BCMaticRevenue](OwrApiBCMaticRevenue.md)
-  - [Revenue](OWRAPIRevenue.md)
-  - [Revenue V2](OwrApiRevenueV2.md)
-- Cost Overview
 
-  - [Cost Overview](OwrApiCostOverview.md)
-- Payroll (formerly known as Worktime Export)
-  
-  - [Payroll](OwrApiPayroll.md)
-- Employee
-  
-  - [Employee](OwrApiEmployees.md)
-- Planning
-  
-  - [Planning](OwrApiPlanning.md)
-- Absences
-  
-  - [Absences](OwrApiAbsences.md)
-- Query
-  
-  - [Query](OwrApiQuery.md)
-- AutoScheduling
-  
-  - [Auto Scheduling](OwrAutoScheduling.md)
-- T01 (Vesta - expresso)
-  - [Employee](OwrApiT01Employees.md)
-  - [Assignments/Contracts](OwrApiT01Assignments.md)
-
-  
 
 
   ​
